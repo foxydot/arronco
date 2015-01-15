@@ -1,4 +1,7 @@
 <?php
+/**
+ * Alters loop params
+ */
 function msdlab_alter_loop_params($query){
      if ( ! is_admin() && $query->is_main_query() ) {
          if($query->is_post_type_archive('event')){

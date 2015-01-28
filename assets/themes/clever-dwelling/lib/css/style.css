@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+@charset "UTF-8";
 /*
 HTML5 Reset
 ---------------------------------------------------------------------------------------------------- */
@@ -179,42 +179,6 @@ input[type="search"] {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* Float Clearing
---------------------------------------------- 
-
-.archive-pagination:before,
-.clearfix:before,
-.entry:before,
-.entry-pagination:before,
-.footer-widgets:before,
-.nav-primary:before,
-.nav-secondary:before,
-.site-container:before,
-.site-footer:before,
-.site-header:before,
-.site-inner:before,
-.wrap:before {
-  content: " ";
-  display: table;
-}
-
-.archive-pagination:after,
-.clearfix:after,
-.entry:after,
-.entry-pagination:after,
-.footer-widgets:after,
-.nav-primary:after,
-.nav-secondary:after,
-.site-container:after,
-.site-footer:after,
-.site-header:after,
-.site-inner:after,
-.wrap:after {
-  clear: both;
-  content: " ";
-  display: table;
-}
-*/
 /*!
  * Bootstrap v3.0.0
  *
@@ -1759,16 +1723,16 @@ input[type="number"]::-webkit-inner-spin-button {
   color: #999999;
 }
 .form-control::-webkit-input-placeholder {
-  color: #ff69b4;
+  color: hotpink;
 }
 .form-control:-moz-placeholder {
-  color: #ff69b4;
+  color: hotpink;
 }
 .form-control::-moz-placeholder {
-  color: #ff69b4;
+  color: hotpink;
 }
 .form-control:-ms-input-placeholder {
-  color: #ff69b4;
+  color: hotpink;
 }
 .form-control {
   display: block;
@@ -5566,12 +5530,40 @@ td.visible-print {
     display: none !important;
   }
 }
+@font-face {
+  font-family: "Sceptica Black";
+  src: url("../fonts/glen_jan_-_sceptica-black-webfont.eot");
+  src: url("../fonts/glen_jan_-_sceptica-black-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/glen_jan_-_sceptica-black-webfont.woff") format("woff"), url("../fonts/glen_jan_-_sceptica-black-webfont.ttf") format("truetype"), url("../fonts/glen_jan_-_sceptica-black-webfont.svg#adex") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sceptica";
+  src: url("../fonts/sceptica-webfont.eot");
+  src: url("../fonts/sceptica-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/sceptica-webfont.woff") format("woff"), url("../fonts/sceptica-webfont.ttf") format("truetype"), url("../fonts/sceptica-webfont.svg#adex") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../fonts/helveticaneue-roman.eot");
+  src: url("../fonts/helveticaneue-roman.eot?#iefix") format("embedded-opentype"), url("../fonts/helveticaneue-roman.woff") format("woff"), url("../fonts/helveticaneue-roman.ttf") format("truetype"), url("../fonts/helveticaneue-roman.svg#adex") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Helvetica Neue Thin";
+  src: url("../fonts/helveticaneuethin.eot");
+  src: url("../fonts/helveticaneuethin.eot?#iefix") format("embedded-opentype"), url("../fonts/helveticaneuethin.woff") format("woff"), url("../fonts/helveticaneuethin.ttf") format("truetype"), url("../fonts/helveticaneuethin.svg#adex") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 /* Import Fonts
 ------------------------------------------------------------ */
 /* Font Stacks */
 .customsansserif,
 .customsanserif {
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Sceptica", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -5581,7 +5573,6 @@ td.visible-print {
   font-family: FontAwesome;
 }
 /* Colors */
-/* Custom Colors */
 /* Neutrals */
 /* Gradients */
 /* Buttons */
@@ -5590,10 +5581,10 @@ td.visible-print {
 .button a,
 .button a:hover,
 .button a:visited {
-  background-color: #532a44;
+  background-color: #9ca728;
   border-radius: 0;
   padding: 6px 24px;
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Sceptica", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -5605,7 +5596,7 @@ td.visible-print {
   display: table;
   margin: 12px auto;
   text-decoration: none;
-  background-color: #311928;
+  background-color: #767e1e;
 }
 /* Clears */
 .msd-clearfix {
@@ -5627,7 +5618,7 @@ html {
 body {
   background-color: #ffffff;
   color: #1a1a1a;
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -5656,7 +5647,7 @@ textarea:focus,
   color: #ffffff;
 }
 a {
-  color: #323232;
+  color: #5e5f61;
   text-decoration: none;
 }
 a img {
@@ -5684,7 +5675,7 @@ ul {
 }
 blockquote,
 blockquote::before {
-  color: #323232;
+  color: #5e5f61;
 }
 blockquote {
   margin: 40px 40px 24px;
@@ -5692,7 +5683,7 @@ blockquote {
   border: none;
 }
 blockquote p {
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Sceptica", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -5715,6 +5706,9 @@ blockquote::before {
 cite {
   font-style: normal;
 }
+address {
+  display: inline;
+}
 /* Headings
 --------------------------------------------- */
 h1,
@@ -5723,7 +5717,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Sceptica", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -5779,8 +5773,7 @@ input,
 select,
 textarea {
   background-color: #ffffff;
-  border: 1px solid #323232;
-  box-shadow: 1px 1px 3px #323232 inset;
+  border: 1px solid #5e5f61;
   color: #1a1a1a;
   font-size: 14px;
   font-size: 1.4rem;
@@ -5806,10 +5799,10 @@ input[type="reset"],
 input[type="submit"],
 .button,
 .entry-content .button {
-  background-color: #532a44;
+  background-color: #9ca728;
   border-radius: 0;
   padding: 6px 24px;
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Sceptica", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -5833,10 +5826,10 @@ input:hover[type="reset"],
 input:hover[type="submit"],
 .button:hover,
 .entry-content .button:hover {
-  background-color: #532a44;
+  background-color: #9ca728;
   border-radius: 0;
   padding: 6px 24px;
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Sceptica", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -5848,7 +5841,7 @@ input:hover[type="submit"],
   display: table;
   margin: 12px auto;
   text-decoration: none;
-  background-color: #311928;
+  background-color: #767e1e;
 }
 .entry-content .button:hover {
   color: #ffffff;
@@ -5896,7 +5889,7 @@ Structure and Layout
 .sidebar-secondary section,
 article {
   margin: 0 auto;
-  max-width: 1140px;
+  max-width: 1000px;
 }
 .site-inner {
   clear: both;
@@ -6041,7 +6034,7 @@ img.alignright,
   padding: 4rem;
 }
 .author-box-title {
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -6075,7 +6068,7 @@ img.alignright,
 }
 .section-title a:hover,
 .entry-title a:hover {
-  color: #323232;
+  color: #5e5f61;
 }
 .sidebar .widget-title a {
   border: none;
@@ -6112,7 +6105,7 @@ Widgets
   padding: 0.4rem 0;
   font-weight: normal;
   margin-bottom: 0;
-  color: #532a44;
+  color: #9ca728;
 }
 /* Featured Content
 --------------------------------------------- */
@@ -6207,7 +6200,8 @@ img#wpstats {
 }
 /* Pre Header */
 .pre-header {
-  background: #d6b293;
+  background: url(../img/arronco-color-bar.png) #9ca728;
+  min-height: 3px;
 }
 .pre-header .wrap {
   text-align: right;
@@ -6219,34 +6213,6 @@ img#wpstats {
 .pre-header .wrap .header-widget-area .widget {
   width: auto;
   display: inline-block;
-}
-.pre-header .wrap .connected-phone,
-.pre-header .wrap .connected-social {
-  display: inline-block;
-  float: none;
-  vertical-align: baseline;
-  top: 0;
-}
-.pre-header .wrap .connected-phone .social-media a.fa,
-.pre-header .wrap .connected-social .social-media a.fa {
-  width: 2em;
-  height: 2em;
-  text-align: center;
-  line-height: 2em;
-}
-.pre-header .wrap .connected-phone .social-media span,
-.pre-header .wrap .connected-social .social-media span {
-  text-indent: -9999px;
-  display: none;
-}
-.pre-header .wrap .connected-phone {
-  color: white;
-  padding-right: 1rem;
-  position: relative;
-  top: -0.8rem;
-}
-.pre-header .wrap .connected-phone span {
-  font-weight: 700;
 }
 /*
 Site Header
@@ -6262,7 +6228,7 @@ Site Header
 --------------------------------------------- */
 .title-area {
   float: left;
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Sceptica", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -6311,8 +6277,8 @@ Site Header
 }
 .header-image .site-title a {
   float: left;
-  min-height: 74px;
-  width: 300px;
+  min-height: 85px;
+  width: 380px;
   height: 100px;
   background: url(../img/logo.png) no-repeat center left;
   background-size: contain;
@@ -6324,7 +6290,7 @@ Site Header
 .site-header .widget-area {
   float: right;
   text-align: right;
-  width: 800px;
+  clear: right;
   line-height: 1;
   margin-top: 1rem;
 }
@@ -6364,7 +6330,7 @@ Site Header
   content: "\f023";
 }
 .site-header .widget-area .widget_nav_menu nav ul li:hover a {
-  color: #323232;
+  color: #5e5f61;
   text-decoration: none;
 }
 .site-header .widget-area .search-form {
@@ -6406,10 +6372,15 @@ Site Header
 /*
 Site Navigation
 ---------------------------------------------------------------------------------------------------- */
+.site-header nav {
+  display: inline-block;
+  float: right;
+  clear: right;
+}
 .genesis-nav-menu {
   clear: both;
-  color: #31b3d5;
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  color: #5e5f61;
+  font-family: "Sceptica", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -6425,7 +6396,7 @@ Site Navigation
 .genesis-nav-menu .menu-item a,
 .genesis-nav-menu .separator a {
   border: none;
-  color: #31b3d5;
+  color: #5e5f61;
   display: block;
   padding: 20px;
   padding: 2rem;
@@ -6433,10 +6404,11 @@ Site Navigation
 }
 .genesis-nav-menu .menu-item a:hover,
 .genesis-nav-menu .separator a:hover {
-  color: #31b3d5;
+  color: #1a1a1a;
+  text-decoration: none;
 }
 .genesis-nav-menu .current-menu-item > a {
-  color: #31b3d5;
+  color: #1a1a1a;
 }
 .genesis-nav-menu .sub-menu {
   left: -9999px;
@@ -6505,29 +6477,54 @@ Site Navigation
 .site-header .sub-menu .sub-menu {
   margin-top: -55px;
 }
+/* Top tab Navigation
+--------------------------------------------- */
+.tab-menu {
+  padding: 0;
+}
+.tab-menu .genesis-nav-menu .menu-item {
+  width: auto;
+  position: relative;
+  border-radius: 0 0 0.4rem 0.4rem;
+  background-color: #9ca728;
+}
+.tab-menu .genesis-nav-menu .menu-item a {
+  font-family: "Sceptica", "Trebuchet MS", Calibri, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.625;
+  line-height: 1;
+  padding: 1rem 1.6rem;
+  color: #ffffff;
+}
+.tab-menu .genesis-nav-menu .menu-item a:hover {
+  color: #ffffff;
+}
+.tab-menu .genesis-nav-menu .menu-item.schedule {
+  background-color: #5e5f61;
+}
+.tab-menu .genesis-nav-menu li.menu-item.last-child {
+  border: 0;
+}
 /* Primary Navigation
 --------------------------------------------- */
 .nav-primary {
   display: inline-block;
   float: right;
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Sceptica", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.625;
-  margin-top: 20px;
-  margin-top: 2rem;
 }
 .nav-primary li.menu-item {
-  font-size: 16px;
-  font-size: 1.6rem;
-  padding: 1rem 2rem;
-  font-weight: 700;
+  padding: 0;
 }
 .nav-primary li.menu-item a {
-  color: #163559;
+  color: #9ca728;
   text-transform: uppercase;
-  padding: 0;
+  padding: 0.6rem 1.2rem;
 }
 .nav-primary li.menu-item .sub-menu {
   background-color: #ffffff;
@@ -6546,7 +6543,7 @@ Site Navigation
 .nav-primary li.menu-item .sub-menu li.menu-item a {
   background-color: transparent;
   border: 0;
-  color: #163559;
+  color: #1b6f85;
   padding: 1rem 0;
   width: 100%;
 }
@@ -6558,7 +6555,7 @@ Site Navigation
   text-decoration: none;
 }
 .nav-primary li.separator {
-  color: #163559;
+  color: #9ca728;
 }
 .nav-primary li:hover a,
 .nav-primary li.current-menu-item a,
@@ -6566,13 +6563,9 @@ Site Navigation
 .nav-primary li:hover a:hover,
 .nav-primary li.current-menu-item a:hover,
 .nav-primary li.current-menu-ancestor a:hover {
-  color: #532a44;
+  background: #9ca728;
+  color: #ffffff;
   text-decoration: none;
-}
-.nav-primary ul.menu > li.first-child a:before {
-  font-family: FontAwesome;
-  padding: 0 0.4rem 0 0.2rem;
-  content: "\f015";
 }
 .mainNav > ul > li.first > ul > li.title > ul > li > ul > li {
   padding: 3px 0;
@@ -6587,15 +6580,17 @@ Site Navigation
   position: relative;
 }
 .nav-secondary .wrap li.menu-item > a {
-  font-size: 16px;
-  font-size: 1.6rem;
-  line-height: 18px;
-  line-height: 1.8rem;
+  font-family: "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.625;
   padding: 0.5rem 1rem;
-  color: #323232;
+  color: #999999;
+  text-transform: uppercase;
 }
 .nav-secondary .wrap li.menu-item > a:hover {
-  color: #31b3d5;
+  color: #9ca728;
 }
 .nav-secondary .wrap li.menu-item ul {
   display: none;
@@ -6623,6 +6618,50 @@ Site Navigation
 .nav-secondary .wrap li:hover ul {
   display: block;
 }
+/* Footer Navigation
+--------------------------------------------- */
+.nav-footer {
+  padding: 0.5rem 0;
+  color: #ffffff;
+  font-size: 1rem;
+}
+.nav-footer li.menu-item {
+  width: auto;
+  position: relative;
+}
+.nav-footer li.menu-item > a {
+  padding: 0 1rem;
+  color: #ffffff;
+}
+.nav-footer li.menu-item > a:hover {
+  color: #cccccc;
+}
+.nav-footer li.menu-item ul {
+  display: none;
+  position: absolute;
+  background: #999999;
+  text-align: center;
+  left: 20px;
+  z-index: 500;
+}
+.nav-footer li.menu-item ul li {
+  border: 0;
+  display: block;
+  width: auto;
+}
+.nav-footer li.menu-item ul li a {
+  border: 0;
+  color: #1a1a1a;
+  width: auto;
+  padding: 0 0 0 20px;
+  background-position: left center;
+}
+.nav-footer li.menu-item.last-child {
+  border: 0;
+}
+.nav-footer li:hover ul {
+  display: block;
+}
 /*
 Content Area
 ---------------------------------------------------------------------------------------------------- */
@@ -6637,7 +6676,7 @@ article.entry {
 .entry-content h3 {
   color: #31b3d5;
   text-transform: uppercase;
-  border-bottom: 1px dotted #323232;
+  border-bottom: 1px dotted #5e5f61;
 }
 .entry-content .attachment a,
 .entry-content .gallery a {
@@ -6697,7 +6736,7 @@ article.entry {
   display: block;
 }
 .entry-header .entry-title {
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Sceptica", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 28px;
   font-size: 2.8rem;
@@ -6709,17 +6748,17 @@ article.entry {
   margin: 0;
 }
 .entry-header .entry-subtitle {
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Sceptica", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 22px;
   font-size: 2.2rem;
   line-height: 1.625;
   font-weight: 300;
-  color: #532a44;
+  color: #9ca728;
   line-height: 1.25;
 }
 .entry-header .client-name {
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Sceptica", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 18px;
   font-size: 1.8rem;
@@ -6923,10 +6962,10 @@ Sidebars
   /*Text Widget with Click */
 }
 .sidebar .widget_text .textwidget .readmore {
-  background-color: #532a44;
+  background-color: #9ca728;
   border-radius: 0;
   padding: 6px 24px;
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Sceptica", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -6965,7 +7004,7 @@ Sidebars
 Footer Widgets
 ---------------------------------------------------------------------------------------------------- */
 .footer-widgets {
-  background-color: #532a44;
+  background-color: #999999;
   color: #999;
   clear: both;
   padding: 0;
@@ -6988,15 +7027,15 @@ Footer Widgets
   word-wrap: break-word;
 }
 .footer-widgets .search-form input:focus {
-  border: 1px solid #ddd;
+  border: 0 solid #ddd;
 }
 /*
 Site Footer
 ---------------------------------------------------------------------------------------------------- */
 .site-footer {
-  background-color: #1a1a1a;
-  color: #cccccc;
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  background-color: #8f9738;
+  color: #ffffff;
+  font-family: "Sceptica", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 10px;
   font-size: 1rem;
@@ -7006,38 +7045,21 @@ Site Footer
   padding: 1rem 0;
   text-align: center;
 }
-.site-footer .copyright,
-.site-footer .social {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-@media (min-width: 768px) {
-  .site-footer .copyright,
-  .site-footer .social {
-    float: left;
-    width: 50%;
-  }
-}
-.site-footer .copyright {
-  text-align: right;
-}
 .site-footer p {
   margin-bottom: 0;
 }
 .site-footer a {
-  color: #cccccc;
+  color: #ffffff;
 }
 .page-title-area {
-  background: #532a44;
+  background: #9ca728;
 }
 .page-title-area .section-title,
 .page-title-area .page-title,
 .page-title-area .entry-title {
   padding: 1.2rem 0;
   margin: 0;
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Sceptica", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 30px;
   font-size: 3rem;
@@ -7061,550 +7083,13 @@ Site Footer
   text-decoration: none;
   opacity: 1;
 }
-.page .banner,
-.single-project .banner {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: local;
-  background-color: #f8f8f8;
-  min-height: 500px;
-  width: 100%;
-}
-.page .project-gallery,
-.single-project .project-gallery {
-  max-height: 360px;
-  overflow: auto;
-}
-.page .project-gallery .gallery .gallery-item,
-.single-project .project-gallery .gallery .gallery-item {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  float: left;
-  width: 33.33333333%;
-  padding: 0 0.2rem;
-  margn: 0.2rem 0;
-}
-.page .project-gallery .gallery .gallery-item .gallery-icon a img.attachment-thumbnail,
-.single-project .project-gallery .gallery .gallery-item .gallery-icon a img.attachment-thumbnail {
-  border: 0;
-  margin: 0.2rem 0;
-}
-.page .jp-carousel-wrap .jp-carousel-overlay,
-.single-project .jp-carousel-wrap .jp-carousel-overlay {
-  background-color: #ffffff;
-}
-.page .jp-carousel-wrap .jp-carousel-info .jp-carousel-image-meta,
-.single-project .jp-carousel-wrap .jp-carousel-info .jp-carousel-image-meta {
-  background: none repeat scroll 0 0 #eee;
-  border: 1px solid #ddd;
-  color: #333;
-}
-.page .jp-carousel-wrap .jp-carousel-info .jp-carousel-image-meta .jp-carousel-image-exif,
-.single-project .jp-carousel-wrap .jp-carousel-info .jp-carousel-image-meta .jp-carousel-image-exif {
-  display: none;
-}
-.page .jp-carousel-wrap .jp-carousel-info .jp-carousel-titleanddesc,
-.single-project .jp-carousel-wrap .jp-carousel-info .jp-carousel-titleanddesc {
-  border-top: 1px solid #ddd;
-  color: #999;
-}
-.page .jp-carousel-wrap .jp-carousel-info .jp-carousel-titleanddesc .jp-carousel-titleanddesc-title,
-.single-project .jp-carousel-wrap .jp-carousel-info .jp-carousel-titleanddesc .jp-carousel-titleanddesc-title {
-  color: #666;
-}
-.page .jp-carousel-wrap .jp-carousel-close-hint span,
-.single-project .jp-carousel-wrap .jp-carousel-close-hint span {
-  border-radius: 0px;
-}
-.page .adjacent-entry-pagination,
-.single-project .adjacent-entry-pagination {
-  margin: 0 auto;
-  max-width: 1140px;
-  margin-bottom: 4rem;
-  display: block;
-  width: 100%;
-}
-.page .adjacent-entry-pagination:before,
-.single-project .adjacent-entry-pagination:before,
-.page .adjacent-entry-pagination:after,
-.single-project .adjacent-entry-pagination:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-.page .adjacent-entry-pagination:after,
-.single-project .adjacent-entry-pagination:after {
-  clear: both;
-}
-.page .adjacent-entry-pagination:before,
-.single-project .adjacent-entry-pagination:before,
-.page .adjacent-entry-pagination:after,
-.single-project .adjacent-entry-pagination:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-.page .adjacent-entry-pagination:after,
-.single-project .adjacent-entry-pagination:after {
-  clear: both;
-}
-.page .adjacent-entry-pagination .pagination-previous a,
-.single-project .adjacent-entry-pagination .pagination-previous a,
-.page .adjacent-entry-pagination .pagination-next a,
-.single-project .adjacent-entry-pagination .pagination-next a,
-.page .adjacent-entry-pagination .pagination-previous div,
-.single-project .adjacent-entry-pagination .pagination-previous div,
-.page .adjacent-entry-pagination .pagination-next div,
-.single-project .adjacent-entry-pagination .pagination-next div {
-  background-size: cover;
-  display: block;
-  min-height: 300px;
-  position: relative;
-}
-.page .adjacent-entry-pagination .pagination-previous a span,
-.single-project .adjacent-entry-pagination .pagination-previous a span,
-.page .adjacent-entry-pagination .pagination-next a span,
-.single-project .adjacent-entry-pagination .pagination-next a span,
-.page .adjacent-entry-pagination .pagination-previous div span,
-.single-project .adjacent-entry-pagination .pagination-previous div span,
-.page .adjacent-entry-pagination .pagination-next div span,
-.single-project .adjacent-entry-pagination .pagination-next div span {
-  font-weight: 500;
-  font-size: 2.8rem;
-  color: #ffffff;
-  text-shadow: 2px 2px 4px #1a1a1a;
-  margin: 0 10%;
-  padding: 6px 12px;
-  border-top: 1px solid #ffffff;
-  border-bottom: 1px solid #ffffff;
-  text-align: center;
-  display: block;
-  width: 80%;
-  top: 40%;
-  position: absolute;
-}
-.page .adjacent-entry-pagination .pagination-previous a:hover,
-.single-project .adjacent-entry-pagination .pagination-previous a:hover,
-.page .adjacent-entry-pagination .pagination-next a:hover,
-.single-project .adjacent-entry-pagination .pagination-next a:hover {
-  text-decoration: none;
-}
-.page .adjacent-entry-pagination .pagination-previous a span:before,
-.single-project .adjacent-entry-pagination .pagination-previous a span:before {
-  font-family: FontAwesome;
-  content: '';
-}
-.page .adjacent-entry-pagination .pagination-next a span:after,
-.single-project .adjacent-entry-pagination .pagination-next a span:after {
-  font-family: FontAwesome;
-  content: '';
-}
-.page-footer-widget {
-  position: relative;
-}
-.image-widget-background {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: local;
-  min-height: 500px;
-  display: table;
-  width: 100%;
-}
-.image-widget-background .fuzzybubble {
-  border-radius: 100%;
-  width: 450px;
-  height: 450px;
-  margin: 2.5rem auto;
-  padding: 3rem;
-  border: 4px solid #ffffff;
-  color: #ffffff;
-}
-.image-widget-background .fuzzybubble .widget-title {
-  margin-top: 5rem;
-  font-size: 3.6rem;
-  color: #ffffff;
-  text-align: center;
-  text-transform: uppercase;
-}
-.image-widget-background .fuzzybubble .widget-content {
-  width: 80%;
-  margin: 0 auto;
-  font-size: 1.2rem;
-}
-.image-widget-background .fuzzybubble .widget-content .subtitle {
-  display: block;
-  font-weight: 700;
-  font-size: 1.8rem;
-}
-.image-widget-background .fuzzybubble .widget-content .link {
-  text-align: center;
-}
-.layerslider_widget .ls-slide .fuzzybubble {
-  border-radius: 100%;
-  width: 250px;
-  height: 250px;
-  margin: 2.5rem auto;
-  padding: 3rem;
-  border: 4px solid #ffffff;
-  color: #ffffff;
-  white-space: normal;
-}
-.layerslider_widget .ls-slide .fuzzybubble h1 {
-  margin-top: 5rem;
-  font-size: 3.6rem;
-  color: #ffffff;
-  text-align: center;
-  text-transform: uppercase;
-}
-.layerslider_widget .ls-slide .fuzzybubble h3 {
-  display: block;
-  color: #ffffff;
-  text-align: center;
-  font-weight: 700;
-  font-size: 1.8rem;
-}
-.layerslider_widget .ls-slide .fuzzybubble p {
-  margin: 0 auto;
-  color: #ffffff;
-  text-align: center;
-  width: 80%;
-  font-size: 1.2rem;
-}
-.layerslider_widget .ls-slide .fuzzybubble p .link {
-  text-align: center;
-}
-.archive-description {
-  padding: 3rem;
-  border: 0;
-  margin-bottom: 0;
-}
-.archive-description h1 {
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 22px;
-  font-size: 2.2rem;
-  line-height: 1.625;
-  font-weight: 300;
-  color: #532a44;
-  line-height: 1.25;
-}
-.billboard_nav {
-  padding: 3rem;
-  border: 0;
-  margin-bottom: 0;
-  z-index: 10000;
-  background-color: #532a44;
-  min-height: 300px;
-  position: relative;
-  margin-bottom: -140px;
-  text-align: center;
-  color: #ffffff;
-}
-.billboard_nav wrap {
-  position: relative;
-}
-.billboard_nav h1 {
-  color: #ffffff;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 3.6rem;
-  letter-spacing: 0.5rem;
-}
-.billboard_nav div.sep {
-  background: url(../img/bkg-portfolio-sep-wht.png) no-repeat center center;
-  display: block;
-  min-height: 4.6rem;
-  margin-bottom: 3rem;
-}
-.billboard_nav .nav-icons-wrapper {
-  position: relative;
-  top: -400px;
-  width: 600px;
-  height: 600px;
-  margin: 0 auto -400px;
-}
-.billboard_nav .nav-icons-wrapper a {
-  color: #ffffff;
-  position: absolute;
-  opacity: 0;
-}
-.billboard_nav .nav-icons-wrapper a .round-wrap {
-  border: 1px solid #ffffff;
-  border-radius: 100%;
-  text-align: center;
-  height: 6em;
-  width: 6em;
-  margin: 1rem;
-  position: relative;
-  vertical-align: top;
-  line-height: 1;
-}
-.billboard_nav .nav-icons-wrapper a .round-wrap i {
-  display: block;
-  margin: 2rem auto 0;
-}
-.billboard_nav .nav-icons-wrapper a:hover {
-  text-decoration: none;
-  color: #ffffff;
-}
-.billboard_nav .nav-icons-wrapper a:hover .round-wrap {
-  border: 1px solid #532a44;
-  background-color: #532a44;
-}
-.billboard_nav .fuzzybubble a:hover {
-  text-decoration: none;
-}
-.billboard_nav .fuzzybubble .entry-subtitle {
-  color: #ffffff;
-  margin: 5rem auto 0;
-  font-size: 3.5rem;
-  text-align: center;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 4px #1a1a1a;
-  width: 90%;
-}
-.billboard_nav .fuzzybubble p {
-  width: 80%;
-  margin: 0 auto;
-}
-.floating_nav {
-  text-align: center;
-  padding: 1rem;
-  z-index: 9000;
-  height: 140px;
-  width: 100%;
-  background: #ffffff;
-}
-.floating_nav a {
-  border: 1px solid #532a44;
-  border-radius: 100%;
-  font-size: 1rem;
-  text-align: center;
-  min-height: 9rem;
-  min-width: 9rem;
-  display: inline-block;
-  margin: 1rem;
-  position: relative;
-  vertical-align: top;
-  line-height: 1;
-}
-.floating_nav a i {
-  display: block;
-  margin: 2rem auto 0;
-}
-.floating_nav a:after,
-.floating_nav a:before {
-  top: 100%;
-  left: 50%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-}
-.floating_nav a:after {
-  border-color: rgba(83, 42, 68, 0);
-  border-top-color: transparent;
-  border-width: 6px;
-  margin-left: -6px;
-}
-.floating_nav a:before {
-  border-color: rgba(83, 42, 68, 0);
-  border-top-color: transparent;
-  border-width: 7px;
-  margin-left: -7px;
-}
-.floating_nav a:hover,
-.floating_nav a.active {
-  text-decoration: none;
-  color: #ffffff;
-  background-color: #532a44;
-}
-.floating_nav a:hover:after,
-.floating_nav a:hover:before,
-.floating_nav a.active:after,
-.floating_nav a.active:before {
-  top: 100%;
-  left: 51%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-}
-.floating_nav a:hover:after,
-.floating_nav a.active:after {
-  border-color: rgba(83, 42, 68, 0);
-  border-top-color: #532A44;
-  border-width: 6px;
-  margin-left: -6px;
-}
-.floating_nav a:hover:before,
-.floating_nav a.active:before {
-  border-color: rgba(83, 42, 68, 0);
-  border-top-color: #532A44;
-  border-width: 7px;
-  margin-left: -7px;
-}
-.section .section-title {
-  background: #d6b293;
-}
-.section .section-title h3 {
-  color: #ffffff;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 24px;
-  font-size: 2.4rem;
-  line-height: 1.625;
-  font-weight: 300;
-  padding: 0.5rem 0;
-}
-.section .section-body {
-  padding: 3rem 0;
-}
-.section .section-body:before,
-.section .section-body:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-.section .section-body:after {
-  clear: both;
-}
-.section .section-body:before,
-.section .section-body:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-.section .section-body:after {
-  clear: both;
-}
-.section .section-body img.pull-left {
-  margin-right: 2rem;
-}
-.section .section-body img.pull-right {
-  margin-left: 2rem;
-}
-.section .section-body .section-subtitle {
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 22px;
-  font-size: 2.2rem;
-  line-height: 1.625;
-  font-weight: 300;
-  color: #532a44;
-  line-height: 1.25;
-}
-.quote:before {
-  font-family: FontAwesome;
-  float: left !important;
-  content: '\f10d';
-  color: #999999;
-  font-size: 3em;
-  margin-right: 1rem;
-  line-height: 1;
-}
-.attribution {
-  font-weight: 700;
-  color: #532a44;
-}
-.msdlab_testimonial_gallery .link-wrapper {
-  clear: both;
-  text-align: center;
-  margin-bottom: -3rem;
-}
-.msdlab_testimonial_gallery .link-wrapper a {
-  background: #532a44;
-  padding: 1rem 3rem;
-  color: #ffffff;
-  font-weight: 700;
-  text-transform: uppercase;
-  display: inline-block;
-}
-.msdlab_upcoming_events {
-  margin: 0 auto;
-  max-width: 1140px;
-  color: #1a1a1a;
-  margin: 1rem auto;
-}
-.msdlab_upcoming_events:before,
-.msdlab_upcoming_events:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-.msdlab_upcoming_events:after {
-  clear: both;
-}
-.msdlab_upcoming_events:before,
-.msdlab_upcoming_events:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-.msdlab_upcoming_events:after {
-  clear: both;
-}
-.msdlab_upcoming_events h3 {
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
-  line-height: 1.625;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin: 0;
-}
-.msdlab_upcoming_events a {
-  color: #532a44;
-  font-weight: 700;
-}
-.msdlab_upcoming_events .carousel-controls {
-  float: left !important;
-  position: relative;
-  width: 3rem;
-  margin: 0 2rem;
-}
-.msdlab_upcoming_events .carousel-controls .carousel-control,
-.msdlab_upcoming_events .carousel-controls .carousel-control:hover,
-.msdlab_upcoming_events .carousel-controls .carousel-control:focus {
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
-  line-height: 1.625;
-  color: #532a44;
-  font-weight: 700;
-  background: none;
-  text-shadow: 0 0 0 rgba(0, 0, 0, 0);
-}
-.msdlab_upcoming_events .carousel-inner {
-  width: 65%;
-  float: left !important;
-  margin-left: 8rem;
-}
-.msdlab_upcoming_events .carousel-inner .item .event-title {
-  font-weight: 700;
-}
-.msdlab_upcoming_events .carousel-inner .item .event-venue {
-  font-style: italic;
+.header-widget-area .textwidget {
+  font-size: 15px;
+  font-size: 1.5rem;
+  color: #5e5f61;
 }
 .footer-widgets {
+  background-color: #b3b3b3;
   color: #ffffff;
 }
 .footer-widgets a,
@@ -7617,7 +7102,7 @@ Site Footer
   text-transform: uppercase;
   font-weight: 300;
   color: #ffffff;
-  background: #d6b293;
+  background: #5e5f61;
 }
 .footer-widgets .connected-text {
   text-align: center;
@@ -7628,8 +7113,8 @@ Site Footer
 .footer-widgets .connected-form input,
 .footer-widgets .connected-form textarea {
   color: #ffffff;
-  background-color: #532a44;
-  border: 1px solid #d3a9c4;
+  background-color: #cccccc;
+  border: 0 solid #f3f6d8;
   padding: 1rem !important;
 }
 .footer-widgets .connected-form ::-webkit-input-placeholder {
@@ -7649,8 +7134,8 @@ Site Footer
 .footer-widgets .connected-form input[type="submit"],
 .footer-widgets .connected-form input[type="button"],
 .footer-widgets .connected-form a.button {
-  background-color: #422136;
-  border: 1px solid #d3a9c4;
+  background-color: #b3b3b3;
+  border: 2px solid #ffffff;
   padding: 1rem 2rem !important;
   font-weight: 700;
   border-radius: 0;
@@ -7658,7 +7143,7 @@ Site Footer
 .footer-widgets .connected-form input[type="submit"]:hover,
 .footer-widgets .connected-form input[type="button"]:hover,
 .footer-widgets .connected-form a.button:hover {
-  background-color: #311928;
+  background-color: #999999;
 }
 .footer-widgets .align-right {
   text-align: right;
@@ -7685,7 +7170,8 @@ Site Footer
 }
 .footer-widgets .connected-social .social-media a.fa {
   background: none;
-  border: 1px solid #d3a9c4;
+  border: 1px solid #f3f6d8;
+  border-radius: 100%;
   color: #ffffff;
   margin: 10px;
   height: 50px;
@@ -7697,7 +7183,7 @@ Site Footer
   margin-right: 0;
 }
 .footer-widgets .connected-social .social-media a.fa:hover {
-  border-color: #311928;
+  border-color: #767e1e;
   color: #ffffff;
 }
 .footer-widgets .connected-social .social-media a.fa-facebook:hover {
@@ -7744,60 +7230,6 @@ Site Footer
 }
 .footer-widgets .connected-social .social-media a.fa-rss:hover {
   background-color: #f37d2a;
-}
-.footer-menu {
-  background: #323232;
-  color: #ffffff;
-}
-.footer-menu .wrap .ftr-menu {
-  width: 100%;
-  display: block;
-  margin-left: 3rem;
-}
-.footer-menu .wrap .ftr-menu .menu {
-  list-style: none outside none;
-}
-.footer-menu .wrap .ftr-menu .menu li {
-  list-style: none outside none;
-}
-.footer-menu .wrap .ftr-menu .menu li a {
-  color: #a8cffe;
-}
-.footer-menu .wrap .ftr-menu .menu > li {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  display: inline-block;
-  padding: 3rem;
-  min-height: 300px;
-  border-right: 1px solid #1a1a1a;
-}
-@media (min-width: 992px) {
-  .footer-menu .wrap .ftr-menu .menu > li {
-    float: left;
-    width: 33.33333333%;
-  }
-}
-.footer-menu .wrap .ftr-menu .menu > li > a {
-  color: #ffffff;
-  text-transform: uppercase;
-  font-size: 1.2em;
-}
-.footer-menu .wrap .ftr-menu .menu > li .sub-menu-description {
-  font-family: Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
-  line-height: 1.625;
-  font-style: italic;
-  color: #999999;
-}
-.footer-menu .wrap .ftr-menu .menu > li .sub-menu {
-  padding-top: 2rem;
-}
-.footer-menu .wrap .ftr-menu .menu > li.first-child {
-  border-left: 1px solid #1a1a1a;
 }
 .nav-responsive ul,
 .nav-responsive li,

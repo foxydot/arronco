@@ -16,7 +16,6 @@ function msdlab_add_styles() {
            // wp_enqueue_style('font-awesome-style',get_stylesheet_directory_uri().'/lib/font-awesome/css/font-awesome.css',array('bootstrap-style'));
             $queue[] = 'bootstrap-style';
             $queue[] = 'font-awesome-style';
-        wp_enqueue_style('adexfont',get_stylesheet_directory_uri().'/lib/css/custom-font.css');
         wp_enqueue_style('msd-style',get_stylesheet_directory_uri().'/lib/css/style.css',$queue);
         $queue[] = 'msd-style';
         if(is_front_page()){
@@ -44,7 +43,6 @@ function msdlab_add_scripts() {
         wp_enqueue_script('msd-jquery',get_stylesheet_directory_uri().'/lib/js/theme-jquery.js',array('jquery','bootstrap-jquery'));
         wp_enqueue_script('nav-scripts',get_stylesheet_directory_uri().'/lib/js/nav-scripts.js',array('jquery','bootstrap-jquery'));
         wp_enqueue_script('equalHeights',get_stylesheet_directory_uri().'/lib/js/jquery.equal-height-columns.js',array('jquery'));
-        wp_enqueue_script('blur',get_stylesheet_directory_uri().'/lib/js/blur.js',array('jquery'));
         if($is_IE){
             wp_enqueue_script('columnizr',get_stylesheet_directory_uri().'/lib/js/jquery.columnizer.js',array('jquery'));
             wp_enqueue_script('background-size',get_stylesheet_directory_uri().'/lib/js/jquery.backgroundSize.js',array('jquery'));
@@ -53,7 +51,9 @@ function msdlab_add_scripts() {
             wp_enqueue_script('ie-fixes',get_stylesheet_directory_uri().'/lib/js/ie-jquery.js',array('jquery'));
         }
         if(is_front_page()){
-            wp_enqueue_script('msd-homepage-jquery',get_stylesheet_directory_uri().'/lib/js/homepage-jquery.js',array('jquery','bootstrap-jquery'));
+            wp_enqueue_script('tweenmax',get_stylesheet_directory_uri().'/lib/js/_dependent/greensock/TweenMax.min.js',array('jquery'));
+            wp_enqueue_script('scroll-magic',get_stylesheet_directory_uri().'/lib/js/jquery.scrollmagic.js',array('jquery','greensock'));
+            wp_enqueue_script('msd-homepage-jquery',get_stylesheet_directory_uri().'/lib/js/homepage-jquery.js',array('jquery','bootstrap-jquery','scroll-magic'));
         }
     }
 }

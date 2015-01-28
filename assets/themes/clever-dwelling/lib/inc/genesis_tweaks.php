@@ -1,7 +1,7 @@
 <?php
 require_once('genesis_tweak_functions.php');
 
-add_action('pre_get_posts','msdlab_alter_loop_params');
+//add_action('pre_get_posts','msdlab_alter_loop_params');
 /*** GENERAL ***/
 add_theme_support( 'html5' );//* Add HTML5 markup structure
 add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
@@ -25,15 +25,20 @@ add_action('genesis_before_header','msdlab_pre_header');
  * Move secodary nav into pre-header
  */
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-add_action( 'msdlab_pre_header', 'genesis_do_subnav' );
-add_action('msdlab_pre_header','msdlab_header_right');
+
+remove_action('genesis_header','genesis_do_header' );
+add_action('genesis_header','msdlab_do_header' );
+
+add_action( 'genesis_header', 'msdlab_do_tabnav', 5);
+add_action('genesis_header','msdlab_header_right' );
+add_action( 'genesis_header', 'genesis_do_subnav' );
 
 /*** NAV ***/
 /**
  * Move nav into header
  */
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
-add_action( 'genesis_header', 'genesis_do_nav' );
+add_action( 'genesis_header', 'msdlab_do_nav' );
 
 /*** SIDEBARS ***/
 add_action('genesis_before', 'msdlab_ro_layout_logic'); //This ensures that the primary sidebar is always to the left.
@@ -72,7 +77,7 @@ add_action( 'genesis_after_endwhile', 'msdlab_prev_next_post_nav' );
 /*** FOOTER ***/
 add_theme_support( 'genesis-footer-widgets', 1 ); //adds automatic footer widgets
 //add the menu
-add_action('genesis_before_footer','msdlab_do_footer_menu', 20);
+//add_action('genesis_before_footer','msdlab_do_footer_menu', 20);
 
 add_action('genesis_before_footer','msdlab_do_footer_widget', 1);
 

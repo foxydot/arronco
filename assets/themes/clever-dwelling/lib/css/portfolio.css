@@ -1,10 +1,9 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
 /* Import Fonts
 ------------------------------------------------------------ */
 /* Font Stacks */
 .customsansserif,
 .customsanserif {
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Sceptica", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -14,7 +13,6 @@
   font-family: FontAwesome;
 }
 /* Colors */
-/* Custom Colors */
 /* Neutrals */
 /* Gradients */
 /* Buttons */
@@ -23,10 +21,10 @@
 .button a,
 .button a:hover,
 .button a:visited {
-  background-color: #532a44;
+  background-color: #9ca728;
   border-radius: 0;
   padding: 6px 24px;
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Sceptica", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -38,7 +36,7 @@
   display: table;
   margin: 12px auto;
   text-decoration: none;
-  background-color: #311928;
+  background-color: #767e1e;
 }
 /* Clears */
 .msd-clearfix {
@@ -52,7 +50,7 @@
   display: none;
 }
 .post-type-archive-project .archive-description {
-  background: #532a44;
+  background: #9ca728;
   text-align: center;
   color: #ffffff;
 }
@@ -82,7 +80,7 @@
   padding: 1rem;
 }
 .post-type-archive-project #filters a.filter {
-  border: 1px solid #532a44;
+  border: 1px solid #9ca728;
   border-radius: 100%;
   font-size: 1rem;
   text-align: center;
@@ -123,7 +121,7 @@
 .post-type-archive-project #filters a.filter.active {
   text-decoration: none;
   color: #ffffff;
-  background-color: #532a44;
+  background-color: #9ca728;
 }
 .post-type-archive-project #filters a.filter:hover:after,
 .post-type-archive-project #filters a.filter:hover:before,
@@ -197,10 +195,10 @@
   text-shadow: 2px 2px 4px #1a1a1a;
 }
 .post-type-archive-project #portfolio-projects article .image-widget-background .fuzzybubble .entry-permalink a {
-  background-color: #532a44;
+  background-color: #9ca728;
   border-radius: 0;
   padding: 6px 24px;
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Sceptica", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;

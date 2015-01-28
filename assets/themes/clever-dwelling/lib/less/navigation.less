@@ -1,10 +1,17 @@
 /*
 Site Navigation
 ---------------------------------------------------------------------------------------------------- */
+.site-header{
+  nav{
+    display: inline-block;
+    float: right;
+    clear: right;
+  }
+}
 
 .genesis-nav-menu {
   clear: both;
-  color: @blue;
+  color: @medgrey;
   .customheader();
   line-height: 1.5;
   width: 100%;
@@ -13,18 +20,19 @@ Site Navigation
     text-align: left;
     a {
       border: none;
-      color: @blue;
+      color: @medgrey;
       display: block;
       padding: 20px;
       padding: 2rem;
       position: relative;
     }
     a:hover{
-     color: @blue;
+     color: @dkgrey;
+     text-decoration: none;
     }
    }
    .current-menu-item>a{
-     color: @blue;
+     color: @dkgrey;
    }
 }
 
@@ -110,6 +118,37 @@ Site Navigation
 .site-header .sub-menu .sub-menu {
   margin-top: -55px;
 }
+/* Top tab Navigation
+--------------------------------------------- */
+
+.tab-menu {
+  padding: 0;
+  .genesis-nav-menu{
+    .menu-item{
+      width:auto;
+      position: relative;
+      border-radius: 0 0 0.4rem 0.4rem;
+      background-color: @green;
+      a{
+        .customheader(1.4);
+        line-height: 1;
+        padding: 1rem 1.6rem;
+        color: @white;
+      }
+      a:hover{
+        color:@white;
+      }
+    }
+    .menu-item.schedule{
+      background-color: @medgrey;
+    }
+    li.menu-item.last-child{
+      border: 0;
+    }
+    li:hover{
+    }
+  }
+}
 
 /* Primary Navigation
 --------------------------------------------- */
@@ -118,17 +157,12 @@ Site Navigation
   display: inline-block;
   float: right;
   .customheader(1.6);
-  margin-top: 20px;
-  margin-top: 2rem;
   li.menu-item{
-    font-size: 16px;
-    font-size: 1.6rem;
-    padding: 1rem 2rem;
-    font-weight: 700;
+    padding: 0;
     a{
-      color: @dkblue;
+      color: @green;
       text-transform: uppercase;
-      padding: 0;
+      padding: 0.6rem 1.2rem;
     }
     .sub-menu{
       background-color: @white;
@@ -156,20 +190,14 @@ Site Navigation
     }
   }
   li.separator {
-    color: @dkblue;
+    color: @green;
   }
   li:hover, li.current-menu-item, li.current-menu-ancestor{
     a, a:hover{
-      color: @wine;
+      background: @green;
+      color: @white;
       text-decoration: none;
       }
-  }
-  ul.menu>li.first-child{
-    a:before{
-      .fontawesome;
-      padding: 0 0.4rem 0 0.2rem;
-      content: "\f015";
-    }
   }
   li.last-child{
   }
@@ -188,15 +216,13 @@ Site Navigation
       width:auto;
       position: relative;
       >a{
-        font-size: 16px;
-        font-size: 1.6rem;
-        line-height: 18px;
-        line-height: 1.8rem;
+        .custombody(1.4);
         padding: 0.5rem 1rem;
-        color: @mdgrey;
+        color: @ltgrey;
+        text-transform: uppercase;
       }
       >a:hover{
-        color:@blue;
+        color:@green;
       }
       ul{
         display: none;
@@ -228,4 +254,52 @@ Site Navigation
       }
     }
   }
+}
+
+/* Footer Navigation
+--------------------------------------------- */
+
+.nav-footer {
+  padding: 0.5rem 0;
+  color: @white;
+  font-size: 1rem;
+    li.menu-item{
+      width:auto;
+      position: relative;
+      >a{
+        padding: 0 1rem;
+        color: @white;
+      }
+      >a:hover{
+        color:@vltgrey;
+      }
+      ul{
+        display: none;
+        position:absolute;
+        background:@ltgrey;
+        text-align: center;
+        left: 20px;
+        z-index: 500;
+        li{
+          border: 0;
+          display: block;
+          width: auto;
+          a{
+            border: 0;
+            color: @dkgrey;
+            width: auto;
+            padding: 0 0 0 20px;
+            background-position: left center;
+          }
+        }
+      }
+    }
+    li.menu-item.last-child{
+      border: 0;
+    }
+    li:hover{
+      ul{
+        display: block;
+      }
+    }
 }

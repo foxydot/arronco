@@ -64,20 +64,48 @@ function msdlab_pre_header(){
     </div>';
 }
 
+register_nav_menus( array(
+    'tab_menu' => 'TabNav Menu'
+) );
+function msdlab_do_tabnav(){
+    if(has_nav_menu('tab_menu')){$tab_menu = wp_nav_menu( array( 'theme_location' => 'tab_menu','container_class' => 'menu genesis-nav-menu menu-tabs','echo' => FALSE, ) );}
+    print '<nav id="tab_menu" class="tab-menu" itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope" role="navigation">'.$tab_menu.'</nav>';
+}
+
 function msdlab_header_right(){
     global $wp_registered_sidebars;
-    if( ( isset( $wp_registered_sidebars['pre-header'] ) && is_active_sidebar( 'pre-header' ) )){
-    genesis_markup( array(
+
+    if ( ( isset( $wp_registered_sidebars['header-right'] ) && is_active_sidebar( 'header-right' ) ) || has_action( 'genesis_header_right' ) ) {
+        genesis_markup( array(
             'html5'   => '<aside %s>',
             'xhtml'   => '<div class="widget-area header-widget-area">',
             'context' => 'header-widget-area',
         ) );
-    dynamic_sidebar( 'pre-header' );
-    genesis_markup( array(
+
+            do_action( 'genesis_header_right' );
+            add_filter( 'wp_nav_menu_args', 'genesis_header_menu_args' );
+            add_filter( 'wp_nav_menu', 'genesis_header_menu_wrap' );
+            dynamic_sidebar( 'header-right' );
+            remove_filter( 'wp_nav_menu_args', 'genesis_header_menu_args' );
+            remove_filter( 'wp_nav_menu', 'genesis_header_menu_wrap' );
+
+        genesis_markup( array(
             'html5' => '</aside>',
             'xhtml' => '</div>',
         ) );
     }
+}
+
+function msdlab_do_header() {
+
+    genesis_markup( array(
+        'html5'   => '<div %s>',
+        'xhtml'   => '<div id="title-area">',
+        'context' => 'title-area',
+    ) );
+    do_action( 'genesis_site_title' );
+    do_action( 'genesis_site_description' );
+    echo '</div>';
 }
  /**
  * Customize search form input
@@ -126,6 +154,24 @@ function msdlab_page_banner(){
 }
 
 /*** NAV ***/
+function msdlab_do_nav() {
+
+    //* Do nothing if menu not supported
+    if ( ! genesis_nav_menu_supported( 'primary' ) )
+        return;
+
+    $class = 'menu genesis-nav-menu menu-primary';
+    if ( genesis_superfish_enabled() ) {
+        $class .= ' js-superfish';
+    }
+
+    genesis_nav_menu( array(
+        'theme_location' => 'primary',
+        'menu_class'     => $class,
+        'walker' => new Description_Walker,
+    ) );
+
+}
 
 /*** SIDEBARS ***/
 function msdlab_add_extra_theme_sidebars(){
@@ -524,23 +570,25 @@ class Description_Walker extends Walker_Nav_Menu
         $output .= "</li>\n";
     }
 }
+
 /**
  * Footer replacement with MSDSocial support
  */
 function msdlab_do_social_footer(){
     global $msd_social;
-    global $wp_filter;
-    //ts_var( $wp_filter['genesis_before_content_sidebar_wrap'] );
+    if(has_nav_menu('footer_menu')){$footer_menu .= wp_nav_menu( array( 'theme_location' => 'footer_menu','container_class' => 'menu genesis-nav-menu nav-footer','echo' => FALSE ) );}
+    
     if($msd_social){
         $address = '<span itemprop="name">'.$msd_social->get_bizname().'</span> | <span itemprop="streetAddress">'.get_option('msdsocial_street').'</span>, <span itemprop="streetAddress">'.get_option('msdsocial_street2').'</span> | <span itemprop="addressLocality">'.get_option('msdsocial_city').'</span>, <span itemprop="addressRegion">'.get_option('msdsocial_state').'</span> <span itemprop="postalCode">'.get_option('msdsocial_zip').'</span> | '.$msd_social->get_digits();
-        $copyright = '&copy; '.date('Y').' '.$msd_social->get_bizname().' | An Equal Opportunity Employer | All Rights Reserved';
+        $copyright .= '&copy; Copyright '.date('Y').' '.$msd_social->get_bizname().' &middot; All Rights Reserved';
     } else {
-        $copyright = '&copy; '.date('Y').' '.get_bloginfo('name').' | An Equal Opportunity Employer | All Rights Reserved';
+        $copyright .= '&copy; Copyright '.date('Y').' '.get_bloginfo('name').' &middot; All Rights Reserved ';
     }
-    
-    print '<div id="footer-info">'.$copyright.'</div>';
+    print '<div class="row">';
+    print '<nav class="footer-menu" itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope" role="navigation">'.$footer_menu.'</nav>';
+    print '<div class="social">'.$copyright.'</div>';
+    print '</div>';
 }
-
 
 /*** SITEMAP ***/
 function msdlab_sitemap(){

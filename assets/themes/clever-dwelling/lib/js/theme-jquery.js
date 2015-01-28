@@ -42,14 +42,13 @@ jQuery(document).ready(function($) {
       }
     }
   });
-	//special for lifestyle
-	/*$('.ftr-menu ul.menu>li').after(function(){
+	$('.nav-footer ul.menu>li').after(function(){
 		if(!$(this).hasClass('last-child') && $(this).hasClass('menu-item') && $(this).css('display')!='none'){
 			return '<li class="separator">|</li>';
 		}
-	});*/
+	});
 	// add target="_blank" to all *external* 
-    var internal_urls = Array('adex.adv','adex.msdlab2.com','adex.com');
+   /* var internal_urls = Array('adex.adv','adex.msdlab2.com','adex.com');
     $('a').attr('target',function(){
         var url = $(this).attr('href');
         var target = $(this).attr('target');
@@ -65,7 +64,7 @@ jQuery(document).ready(function($) {
             }
             return '_blank';
         }
-    });
+    });*/
 });
 function strripos(haystack, needle, offset) {
   //  discuss at: http://phpjs.org/functions/strripos/

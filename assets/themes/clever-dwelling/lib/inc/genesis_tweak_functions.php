@@ -226,9 +226,7 @@ function msdlab_do_title_area(){
     if ($template_file == 'page-sectioned.php') {
     } else { 
         print '<div id="page-title-area" class="page-title-area">';
-        print '<div class="wrap">';
         do_action('msdlab_title_area');
-        print '</div>';
         print '</div>';
     }
 }
@@ -239,35 +237,17 @@ function msdlab_do_section_title(){
         if(get_section_title()!=$post->post_title){
             add_action('genesis_before_entry','genesis_do_post_title');
         }
+        print '<div class="banner clearfix" style="background-image:url('.msdlab_get_thumbnail_url($post->ID,'full').')">';
+        print '<div class="texturize">';
+        print '<div class="gradient">';
+        print '<div class="wrap">';
         print '<h2 class="section-title">';
         print get_section_title();
         print '</h2>';
-    } elseif(is_cpt('project')) {
-        if(is_single()){
-            add_filter('genesis_post_title_text','msdlab_add_portfolio_prefix');
-            genesis_do_post_title();
-            remove_filter('genesis_post_title_text','msdlab_add_portfolio_prefix');
-        } if(is_post_type_archive('project')){
-            print '<h2 class="section-title">';
-            print 'Portfolio';
-            print '</h2>'; 
-        }
-    } elseif(is_cpt('event')) {
-        if(is_single()){
-            genesis_do_post_title();
-        } if(is_post_type_archive('event')){
-            print '<h2 class="section-title">';
-            print 'Events';
-            print '</h2>'; 
-        }
-    } elseif(is_cpt('testimonial')) {
-        if(is_single()){
-            genesis_do_post_title(); //this should never happen
-        } if(is_post_type_archive('testimonial')){
-            print '<h2 class="section-title">';
-            print 'Testimonials';
-            print '</h2>'; 
-        }
+        print '</div>';
+        print '</div>';
+        print '</div>';
+        print '</div>';
     } elseif(is_single()) {
         genesis_do_post_title();
     } else {
@@ -539,7 +519,7 @@ class Description_Walker extends Walker_Nav_Menu
 function msdlab_do_social_footer(){
     global $msd_social;
     global $wp_filter;
-ts_var( $wp_filter['genesis_after_header'] );
+    //ts_var( $wp_filter['genesis_after_header'] );
     
     if(has_nav_menu('footer_menu')){$footer_menu .= wp_nav_menu( array( 'theme_location' => 'footer_menu','container_class' => 'menu genesis-nav-menu nav-footer','echo' => FALSE ) );}
     

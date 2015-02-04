@@ -20,7 +20,22 @@ function msdlab_bootstrap_breadcrumb( $attributes ){
 }
 
 function msdlab_bootstrap_content_sidebar_wrap( $attributes ){
-    $attributes['class'] .= ' row';
+    //$attributes['class'] .= ' row';
+    $layout = genesis_site_layout();
+    switch($layout){
+        case 'content-sidebar':
+        case 'sidebar-content':
+            $attributes['class'] .= ' col-sm-12';
+            break;
+        case 'content-sidebar-sidebar':
+        case 'sidebar-sidebar-content':
+        case 'sidebar-content-sidebar':
+            $attributes['class'] .= ' col-md-8 col-sm-12';
+            break;
+        case 'full-width-content':
+            $attributes['class'] .= ' col-md-12';
+            break;
+    }
     return $attributes;
 }
 
@@ -30,14 +45,15 @@ function msdlab_bootstrap_content( $attributes ){
     switch($layout){
         case 'content-sidebar':
         case 'sidebar-content':
-            //$attributes['class'] .= ' col-md-12';
+            $attributes['class'] .= ' col-md-8 col-sm-12';
             break;
         case 'content-sidebar-sidebar':
         case 'sidebar-sidebar-content':
         case 'sidebar-content-sidebar':
+            $attributes['class'] .= ' col-md-9 col-sm-12';
             break;
         case 'full-width-content':
-            //$attributes['class'] .= ' col-md-12';
+            $attributes['class'] .= ' col-md-12';
             break;
     }
     return $attributes;
@@ -49,12 +65,32 @@ function msdlab_bootstrap_sidebar( $attributes ){
     switch($layout){
         case 'content-sidebar':
         case 'sidebar-content':
-            $attributes['class'] .= ' col-md-12';
+            $attributes['class'] .= ' col-md-4 hidden-sm hidden-xs';
             break;
         case 'content-sidebar-sidebar':
         case 'sidebar-sidebar-content':
         case 'sidebar-content-sidebar':
-            $attributes['class'] .= ' row';
+            $attributes['class'] .= ' col-md-3 hidden-sm hidden-xs';
+            break;
+        case 'full-width-content':
+            $attributes['class'] .= ' hidden';
+            break;
+    }
+    return $attributes;
+}
+
+function msdlab_bootstrap_sidebar_alt( $attributes ){
+    $layout = genesis_site_layout();
+    $template = get_page_template();
+    switch($layout){
+        case 'content-sidebar':
+        case 'sidebar-content':
+            $attributes['class'] .= ' row col-md-4 hidden-sm hidden-xs';
+            break;
+        case 'content-sidebar-sidebar':
+        case 'sidebar-sidebar-content':
+        case 'sidebar-content-sidebar':
+            $attributes['class'] .= ' row col-md-4 hidden-sm hidden-xs';
             break;
         case 'full-width-content':
             $attributes['class'] .= ' hidden';

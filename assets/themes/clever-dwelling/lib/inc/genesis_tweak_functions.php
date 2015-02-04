@@ -350,71 +350,23 @@ function msdlab_prev_next_post_nav() {
 
 }
 
-/****PROJECTS***/
-function msdlab_project_gallery(){
-    if(is_cpt('project') ){
-        global $gallery_info;
-        $gallery_info->the_meta();
-            $ret = FALSE;
-            if($gallery_info->have_fields('gallery')){
-                $ret = do_shortcode('[gallery]');
-            }
-            if($ret){
-                print '<div class="project-gallery col-md-4 pull-right">'.$ret.'</div>';
-            }
-    }
-}
 
-function msdlab_project_header_info(){
-    if(is_cpt('project') ){
-        genesis_do_post_title();
-        msdlab_do_client_name();
-        msdlab_do_project_header();
-    }
-}
-
-function msdlab_project_footer_info(){
-    if(is_cpt('project') ){
-        msdlab_do_project_info();
-    }
-}
-
-function msdlab_do_client_name(){
-    if(is_cpt('project') && class_exists('WPAlchemy_MetaBox')){
-        global $client_info;
-        $client_info->the_meta();
-        $clients = $client_info->get_the_value('client');
-        foreach($clients AS $client){
-            $ret .= '<h5 class="client-name">'.$client['name'].'</h5>';
-        }
-        print $ret;
-    }
-}
-
-function msdlab_do_project_header(){
-    if(is_cpt('project') && class_exists('WPAlchemy_MetaBox')){
-        global $project_header;
-        $project_header->the_meta();
-        $header = $project_header->get_the_value('content');
-        $ret = '<h3 class="entry-subtitle">'.$header.'</h3>';
-        print $ret;
-    }
-}
-
-function msdlab_do_project_info(){
-    if(is_cpt('project') && class_exists('WPAlchemy_MetaBox')){
-        global $project_info;
-        $project_info->the_meta();
-        $containers = array('challenge'=>'Challenge','solutions'=>'Solution','results'=>'Result');
-        $ret = '<div class="project-widgets row">';
-        foreach($containers AS $c => $t){
-            $ret .= '<section class="widget '.$c.' col-md-4">
-                <h4 class="widget-title">'.ucfirst($t).'</h4>
-                <div>'.apply_filters('the_content',$project_info->get_the_value($c)).'</div>
-            </section>';
-        }
-        $ret .= '</div>';
-        print $ret;
+function msdlab_maybe_wrap_inner(){
+    global $do_wrap;
+    
+    $layout = genesis_site_layout();
+    $template = get_page_template();
+    switch($layout){
+        case 'content-sidebar':
+        case 'sidebar-content':
+        case 'content-sidebar-sidebar':
+        case 'sidebar-sidebar-content':
+        case 'sidebar-content-sidebar':
+        $do_wrap['site-inner'] = true;
+            break;
+        case 'full-width-content':
+        $do_wrap['site-inner'] = false;
+            break;
     }
 }
 /*** FOOTER ***/
@@ -435,6 +387,16 @@ register_nav_menus( array(
 function msdlab_do_footer_menu(){
     if(has_nav_menu('footer_menu')){$footer_menu = wp_nav_menu( array( 'theme_location' => 'footer_menu','container_class' => 'ftr-menu ftr-links','echo' => FALSE, 'walker' => new Description_Walker ) );}
     print '<div id="footer_menu" class="footer-menu"><div class="wrap">'.$footer_menu.'</div></div>';
+}
+
+/**
+ * custom wrapper decider
+ */
+function msdlab_maybe_structural_wrap($context = '', $output = 'open', $echo = true){
+    global $do_wrap;
+    if($do_wrap[$context]){
+        genesis_structural_wrap($context,$output,$echo);
+    }
 }
 
 /**
@@ -576,6 +538,9 @@ class Description_Walker extends Walker_Nav_Menu
  */
 function msdlab_do_social_footer(){
     global $msd_social;
+    global $wp_filter;
+ts_var( $wp_filter['genesis_after_header'] );
+    
     if(has_nav_menu('footer_menu')){$footer_menu .= wp_nav_menu( array( 'theme_location' => 'footer_menu','container_class' => 'menu genesis-nav-menu nav-footer','echo' => FALSE ) );}
     
     if($msd_social){

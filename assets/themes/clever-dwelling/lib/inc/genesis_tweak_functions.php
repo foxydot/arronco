@@ -224,6 +224,9 @@ function msdlab_do_title_area(){
     $postid = is_admin()?$_GET['post']:$post->ID;
     $template_file = get_post_meta($postid,'_wp_page_template',TRUE);
     if ($template_file == 'page-sectioned.php') {
+        print '<div id="page-title-area" class="page-title-area">';
+        do_action('msdlab_title_area');
+        print '</div>';
     } else { 
         print '<div id="page-title-area" class="page-title-area">';
         do_action('msdlab_title_area');
@@ -519,7 +522,7 @@ class Description_Walker extends Walker_Nav_Menu
 function msdlab_do_social_footer(){
     global $msd_social;
     global $wp_filter;
-    //ts_var( $wp_filter['genesis_after_header'] );
+    //ts_var( $wp_filter['msdlab_title_area'] );
     
     if(has_nav_menu('footer_menu')){$footer_menu .= wp_nav_menu( array( 'theme_location' => 'footer_menu','container_class' => 'menu genesis-nav-menu nav-footer','echo' => FALSE ) );}
     

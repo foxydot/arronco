@@ -1,0 +1,3 @@
+0.0.1: initial design. Sectioned page with: Title (text), Subtitle (edit), Content(edit), Feature image (file). floating nav, etc. Designed for Adex.
+0.0.2: Improvements to initial design
+0.0.3: Change design of sectioned page to include layout option (unused,select), background-image (file) background-parallax (bool), background-color (colorpicker), Title (text), Subtitle (text), Content(edit), Feature image (file), feature image float (radio)

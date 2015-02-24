@@ -56,7 +56,7 @@ add_action('msdlab_title_area','msdlab_do_section_title');
 add_action('genesis_after_header','msdlab_do_title_area');
 add_action('genesis_before_content_sidebar_wrap', 'genesis_do_breadcrumbs'); //to outside of the loop area
 add_action('genesis_before_entry','msd_post_image');//add the image above the entry
-add_action('genesis_entry_header','msdlab_project_gallery',-5);//add the image above the entry
+//add_action('genesis_entry_header','msdlab_project_gallery',-5);//add the image above the entry
 
 add_filter('excerpt_more', 'sp_read_more_link');
 add_filter( 'the_content_more_link', 'sp_read_more_link' );
@@ -67,8 +67,8 @@ remove_action( 'genesis_entry_header', 'genesis_post_info', 12 ); //remove the i
 remove_action( 'genesis_entry_footer', 'genesis_post_meta'); //remove the meta (filed under, tags, etc.)
 //add_action( 'msdlab_title_area', 'msdlab_do_post_subtitle' );
 
-add_action( 'genesis_entry_header', 'msdlab_project_header_info' );
-add_action( 'genesis_entry_footer', 'msdlab_project_footer_info' );
+//add_action( 'genesis_entry_header', 'msdlab_project_header_info' );
+//add_action( 'genesis_entry_footer', 'msdlab_project_footer_info' );
 
 add_action( 'genesis_before_post', 'msdlab_post_image', 8 ); //add feature image across top of content on *pages*.
 //add_filter( 'genesis_next_link_text', 'msdlab_older_link_text', 20);

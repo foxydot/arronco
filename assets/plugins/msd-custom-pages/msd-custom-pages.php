@@ -3,7 +3,7 @@
 Plugin Name: MSD Custom Pages
 Description: Custom plugin for MSDLAB. Framework to create custom templated pages with custom backends
 Author: Catherine Sandrick
-Version: 0.0.3
+Version: 0.0.4
 Author URI: http://msdlab.com
 */
 

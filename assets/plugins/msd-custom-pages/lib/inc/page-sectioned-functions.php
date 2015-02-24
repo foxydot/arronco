@@ -63,7 +63,8 @@ class MSDSectionedPage{
         $slug = sanitize_title_with_dashes(str_replace('/', '-', $title));
         $subtitle = $section['content-area-subtitle'] !=''?'<h4 class="section-subtitle">'.apply_filters('the_content',$section['content-area-subtitle']).'</h4>':'';
         $content = apply_filters('the_content',$section['content-area-content']);
-        $featured_image = $section['content-area-image'] !=''?'<img src="'.$section['content-area-image'].'">':'';
+        $float = $section['feature-image-float']!='none'?' style="float:'.$section['feature-image-float'].'";':'';
+        $featured_image = $section['content-area-image'] !=''?'<img src="'.$section['content-area-image'].'"'.$float.'>':'';
         $ret = '
         <div id="'.$slug.'" class="section section-'.$eo.' section-'.$slug.' clearfix"'.$background.'>
             '.$wrapped_title.'
@@ -146,6 +147,7 @@ class MSDSectionedPage{
                     });
                     $("#postdivrich").after($("#_page_sectioned_metabox"));
                     $(".colorpicker").spectrum({
+                        preferredFormat: "rgb",
                         showAlpha: true,
                         showInput: true,
                         allowEmpty: true,

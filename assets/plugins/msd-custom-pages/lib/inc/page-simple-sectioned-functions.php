@@ -45,7 +45,6 @@ class MSDSimpleSectionedPage{
     
     function sectioned_page_output(){
         wp_enqueue_script('sticky',WP_PLUGIN_URL.'/'.plugin_dir_path('msd-custom-pages/msd-custom-pages.php'). '/lib/js/jquery.sticky.js',array('jquery'),FALSE,TRUE);
-        //wp_enqueue_script('jquery-path',WP_PLUGIN_URL.'/'.plugin_dir_path('msd-custom-pages/msd-custom-pages.php'). '/lib/js/jquery.path.js',array('jquery','bootstrap-jquery'));
         
         global $post,$subtitle_metabox,$sectioned_page_metabox,$nav_ids;
         $i = 1;
@@ -53,21 +52,20 @@ class MSDSimpleSectionedPage{
         while($sectioned_page_metabox->have_fields('sections')){
             $eo = $i%2==1?'even':'odd';
             $pull = $i%2==1?'left':'right';
-            $title = apply_filters('the_title',$sectioned_page_metabox->get_the_value('title'));
+            $title = apply_filters('the_title',$sectioned_page_metabox->get_the_value('content-area-title'));
             $wrapped_title = trim($title) != ''?'<div class="section-title">
         <h3 class="wrap">
             '.$title.'
         </h3>
     </div>':'';
-            $slug = sanitize_title_with_dashes(str_replace('/', '-', $sectioned_page_metabox->get_the_value('title')));
-            $subtitle = $sectioned_page_metabox->get_the_value('subtitle') !=''?'<h4 class="section-subtitle">'.apply_filters('the_content',$sectioned_page_metabox->get_the_value('subtitle')).'</h4>':'';
+            $slug = sanitize_title_with_dashes(str_replace('/', '-', $sectioned_page_metabox->get_the_value('content-area-title')));
+            $subtitle = $sectioned_page_metabox->get_the_value('subtitle') !=''?'<h4 class="section-subtitle">'.apply_filters('the_content',$sectioned_page_metabox->get_the_value('content-area-subtitle')).'</h4>':'';
             if($slug=='location'){remove_filter( 'the_content', 'wpautop' );}
-            $content = apply_filters('the_content',$sectioned_page_metabox->get_the_value('content'));
+            $content = apply_filters('the_content',$sectioned_page_metabox->get_the_value('content-area-content'));
             if($slug=='location'){add_filter( 'the_content', 'wpautop' );}
-            $image = $sectioned_page_metabox->get_the_value('image') !=''?'<img src="'.$sectioned_page_metabox->get_the_value('image').'" class="pull-'.$pull.'">':'';
+            $image = $sectioned_page_metabox->get_the_value('content-area-image') !=''?'<img src="'.$sectioned_page_metabox->get_the_value('content-area-image').'" class="pull-'.$pull.'">':'';
             $nav_ids[] = $slug;
             $nav[] = '';
-            $billboard_nav[] = '<a id="'.$slug.'_bb_nav" href="#'.$slug.'" class="nav-icon-'.$i.'"><div class="round-wrap"><i class="fa-3x adex-'.$slug.'"></i></div>'.str_replace(' ', '<br>', $title).'</a>';
             $floating_nav[] = '<a id="'.$slug.'_fl_nav" href="#'.$slug.'"><i class="fa-3x adex-'.$slug.'"></i>'.str_replace(' ', '<br>', $title).'</a>';
             $sections[] = '
 <div id="'.$slug.'" class="section section-'.$eo.' section-'.$slug.' clearfix">
@@ -83,22 +81,7 @@ class MSDSimpleSectionedPage{
 ';
             $i++;
         }//close while
-        if(!is_front_page()){
-            print '<div id="billboard_nav" class="billboard_nav image-widget-background" style="background-image:url('.msdlab_get_thumbnail_url($post->ID,'page_banner').');">
-            <div class="wrap">
-            <h1 class="page-title">'.$post->post_title.'</h1>
-            <div class="sep even"></div>
-            <div class="fuzzybubble">
-                <div class=""> 
-                <h3 class="entry-subtitle">'.$subtitle_metabox->get_the_value('subtitle').'</h3>
-                <p class="">'.apply_filters('the_content',$post->post_content).'</p>
-                </div>
-            </div>
-            <div class="nav-icons-wrapper">'.implode("\n",$billboard_nav).'</div>
-            </div>
-            </div>';
-            print '<div id="floating_nav" class="floating_nav">'.implode("\n",$floating_nav).'</div>';
-        }
+        print '<div id="floating_nav" class="floating_nav">'.implode("\n",$floating_nav).'</div>';
         print implode("\n",$sections);
         
         }//clsoe if
@@ -110,33 +93,6 @@ class MSDSimpleSectionedPage{
         <script type="text/javascript">
         jQuery(document).ready(function($) {
             $("#floating_nav").sticky({ topSpacing: 0 });
-            
-            $("#billboard_nav .fuzzybubble").blurjs({
-                radius: 10,
-                source: $('.image-widget-background'), 
-                });
-                
-           
-       //new tweening
-       var progress = [0.166,0.25,0.333,0.667,0.75,0.833];
-       var duration = 3,  //duration (in seconds)
-           path = [{x:0, y:0}, {x:320, y:320}, {x:0, y:640}, {x:-320, y:320},{x:0, y:0}]; //points on the path (BezierPlugin will plot a Bezier through these). Adjust however you please.
-       var tl = new TimelineMax({repeat:10, yoyo:true});       
-            <?php
-            $i = 0;
-            $js_nav_ids = json_encode($nav_ids);
-            ?>
-            var dots = <?php print $js_nav_ids; ?>
-            
-            var count = dots.length;
-            console.log(count);
-            for (i = 0; i < count; i++){
-                var dot = $("#" + dots[i] + "_bb_nav");
-                //var dot = $("<div />", {id:"dot"+i}).addClass("dot").appendTo(".nav-icons-wrapper");
-                var t = TweenMax.to(dot, duration, {bezier:{values:path, curviness:1.5}, paused:true, ease:Linear.easeNone,});
-                TweenLite.to(t, duration - (duration * i/6 ), {progress:1 - progress[i], ease:Linear.easeNone, delay:i*0.3});
-                TweenLite.to(dot, duration*3 - (duration * i/6 ), {css:{opacity: 1},delay:i*0.3});
-            }
         });
         </script>
         <?php

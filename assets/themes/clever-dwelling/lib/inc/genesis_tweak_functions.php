@@ -238,7 +238,7 @@ function msdlab_do_section_title(){
     if(is_page()){
         global $post;
         if(get_section_title()!=$post->post_title){
-            add_action('genesis_before_entry','genesis_do_post_title');
+            add_action('genesis_entry_header','genesis_do_post_title',5);
         }
         print '<div class="banner clearfix" style="background-image:url('.msdlab_get_thumbnail_url($post->ID,'full').')">';
         print '<div class="texturize">';

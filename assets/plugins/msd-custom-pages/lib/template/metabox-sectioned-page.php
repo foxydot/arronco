@@ -20,6 +20,14 @@ if (is_admin()){
             </h3>
         </div>
         <div class="cell">
+            <?php $mb->the_field('section-name'); ?>
+            <label>Section Name*</label>            
+            <div class="input_container">
+                <input type="text" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>"/><br />
+                <i>Please use a section name. This is used to produce identifying wrappers for the content!</i>
+            </div>
+        </div>
+        <div class="cell">
             <?php $mb->the_field('layout'); ?>
             <label>Section <?php print $i ?> Layout</label>            
             <div class="input_container">

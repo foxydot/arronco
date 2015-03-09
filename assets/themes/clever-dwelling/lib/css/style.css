@@ -7247,7 +7247,7 @@ Site Footer
   font-size: 2.2rem;
   line-height: 1.625;
   font-weight: 300;
-  color: #999999;
+  color: #5e5f61;
   line-height: 1.25;
 }
 .sectioned-page-wrapper .section-the-geothermal-advantages {
@@ -7280,17 +7280,17 @@ Site Footer
 }
 .page-title-area .banner .texturize .gradient {
   min-height: 250px;
-  background: -moz-linear-gradient(left, #1a1a1a 0%, rgba(26, 26, 26, 0.1) 10%, rgba(26, 26, 26, 0.1) 90%, #1a1a1a 100%);
+  background: -moz-linear-gradient(left, #1a1a1a 0%, rgba(26, 26, 26, 0.4) 10%, rgba(26, 26, 26, 0.4) 90%, #1a1a1a 100%);
   /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #1a1a1a), color-stop(10%, rgba(26, 26, 26, 0.1)), color-stop(90%, rgba(26, 26, 26, 0.1)), color-stop(100%, #1a1a1a));
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #1a1a1a), color-stop(10%, rgba(26, 26, 26, 0.4)), color-stop(90%, rgba(26, 26, 26, 0.4)), color-stop(100%, #1a1a1a));
   /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(left, #1a1a1a 0%, rgba(26, 26, 26, 0.1) 10%, rgba(26, 26, 26, 0.1) 90%, #1a1a1a 100%);
+  background: -webkit-linear-gradient(left, #1a1a1a 0%, rgba(26, 26, 26, 0.4) 10%, rgba(26, 26, 26, 0.4) 90%, #1a1a1a 100%);
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(left, #1a1a1a 0%, rgba(26, 26, 26, 0.1) 10%, rgba(26, 26, 26, 0.1) 90%, #1a1a1a 100%);
+  background: -o-linear-gradient(left, #1a1a1a 0%, rgba(26, 26, 26, 0.4) 10%, rgba(26, 26, 26, 0.4) 90%, #1a1a1a 100%);
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(left, #1a1a1a 0%, rgba(26, 26, 26, 0.1) 10%, rgba(26, 26, 26, 0.1) 90%, #1a1a1a 100%);
+  background: -ms-linear-gradient(left, #1a1a1a 0%, rgba(26, 26, 26, 0.4) 10%, rgba(26, 26, 26, 0.4) 90%, #1a1a1a 100%);
   /* IE10+ */
-  background: linear-gradient(to right, #1a1a1a 0%, rgba(26, 26, 26, 0.1) 10%, rgba(26, 26, 26, 0.1) 90%, #1a1a1a 100%);
+  background: linear-gradient(to right, #1a1a1a 0%, rgba(26, 26, 26, 0.4) 10%, rgba(26, 26, 26, 0.4) 90%, #1a1a1a 100%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a1a1a', endColorstr='#1a1a1a', GradientType=1);
   /* IE6-9 */

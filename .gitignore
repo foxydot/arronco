@@ -45,10 +45,13 @@ assets/themes/genesis
 wp-content/themes/twenty*
 wp-content/themes/genesis
 
+# Apple stuff
 .DS_Store
 .AppleDouble
 .LSOverride
 Icon
+
+# Backups and such
 *.zip
 *.tar.gz
 *.tar.bz
@@ -87,3 +90,7 @@ local.properties
 
 # PDT-specific
 .buildpath
+
+# Codekit
+config.codekit
+.codekit-cache

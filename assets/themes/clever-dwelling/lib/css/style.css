@@ -6790,7 +6790,6 @@ article.entry {
   font-weight: 500;
   color: #9ca728;
   line-height: 1.25;
-  margin: 0;
 }
 .entry-header .entry-subtitle {
   font-family: "Sceptica", "Trebuchet MS", Calibri, sans-serif;
@@ -7243,8 +7242,8 @@ Site Footer
 .sectioned-page-wrapper .section h3 {
   font-family: "Sceptica", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
-  font-size: 22px;
-  font-size: 2.2rem;
+  font-size: 20px;
+  font-size: 2rem;
   line-height: 1.625;
   font-weight: 300;
   color: #5e5f61;

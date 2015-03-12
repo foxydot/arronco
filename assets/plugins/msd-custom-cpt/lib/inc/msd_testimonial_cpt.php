@@ -201,11 +201,9 @@ class MSD_Widget_Random_Testimonial extends WP_Widget {
         $cpt = new MSDTestimonialCPT();
         extract($args);
         echo $before_widget; 
-        $post = $cpt->testimonial_shortcode_handler();
-        $video->the_meta($post->ID);
         print '<h4 class="widget-title widgettitle">'.$post->post_title.'</h4>';
         print '<div class="wrap">';
-        ts_data($post); 
+        print $cpt->testimonial_shortcode_handler(); 
         print '
         <div class="clearfix"></div>
         </div>';

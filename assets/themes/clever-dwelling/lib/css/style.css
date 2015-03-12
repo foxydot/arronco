@@ -6709,6 +6709,20 @@ Site Navigation
   height: auto;
   max-height: 400px;
 }
+/** MegaMenu **/
+.site-header > .wrap {
+  position: relative;
+}
+#mega-menu-wrap-primary,
+#mega-menu-wrap-primary #mega-menu-primary,
+#mega-menu-wrap-primary #mega-menu-primary ul,
+#mega-menu-wrap-primary #mega-menu-primary li,
+#mega-menu-wrap-primary #mega-menu-primary p,
+#mega-menu-wrap-primary #mega-menu-primary img,
+#mega-menu-wrap-primary #mega-menu-primary div,
+#mega-menu-wrap-primary #mega-menu-primary a {
+  position: static;
+}
 /*
 Content Area
 ---------------------------------------------------------------------------------------------------- */

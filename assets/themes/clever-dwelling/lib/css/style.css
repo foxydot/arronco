@@ -7280,6 +7280,9 @@ Site Footer
     width: 50%;
   }
 }
+.sectioned-page-wrapper .section-conventional-system {
+  text-align: center;
+}
 .page-title-area {
   background: #1a1a1a;
 }

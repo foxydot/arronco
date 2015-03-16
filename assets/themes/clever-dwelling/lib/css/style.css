@@ -6173,6 +6173,14 @@ Plugins
 }
 /* Gravity Forms
 --------------------------------------------- */
+.gform_wrapper .top_label input.large,
+.gform_wrapper .hidden_label input.large,
+.gform_wrapper .top_label select.large,
+.gform_wrapper .hidden_label select.large,
+.gform_wrapper .top_label textarea,
+.gform_wrapper .hidden_label textarea {
+  width: auto;
+}
 div.gform_wrapper input[type="email"],
 div.gform_wrapper input[type="text"],
 div.gform_wrapper textarea,

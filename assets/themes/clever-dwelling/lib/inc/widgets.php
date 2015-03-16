@@ -83,6 +83,14 @@ class KohlerConnected extends MSDConnected {
             $email = (get_option('msdsocial_email')!='')?'Email: <span itemprop="email"><a href="mailto:'.antispambot(get_option('msdsocial_email')).'">'.antispambot(get_option('msdsocial_email')).'</a></span> ':'';
             if ( $email ){ print '<div class="connected-email">'.$email.'</div>'; }
         }
+        
+        if ( $additional_locations ){
+            $additional_locations = do_shortcode('[msd-additional-locations]'); 
+            if ( $additional_locations ){
+                print '<div class="connected-additional-locations">'.$additional_locations.'</div>';
+            }
+        }
+        
         if ( $social ){
             $social = do_shortcode('[msd-social]');
             if( $social ){ print '<div class="connected-social">'.$social.'</div>'; }

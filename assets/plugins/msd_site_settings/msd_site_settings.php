@@ -2,11 +2,22 @@
 /*
 Plugin Name: MSD Site Settings
 Description: Provides settings panel for several social/address options and widgets/shortcodes/functions for display.
-Version: 0.3
+Version: 0.8
 Author: Catherine M OBrien Sandrick (CMOS)
 Author URI: http://msdlab.com/biological-assets/catherine-obrien-sandrick/
+GitHub Plugin URI: https://github.com/msdlab/msd_site_settings
+GitHub Branch:     master
 License: GPL v2
 */
+
+if(!class_exists('GitHubPluginUpdater')){
+    require_once (plugin_dir_path(__FILE__).'/lib/resource/GitHubPluginUpdater.php');
+}
+
+if ( is_admin() ) {
+    new GitHubPluginUpdater( __FILE__, 'msdlab', "msd_site_settings" );
+}
+
 
 class MSDSocial{
 	private $the_path;
@@ -20,16 +31,19 @@ class MSDSocial{
 		/*
 		 * Pull in some stuff from other files
 		 */
-		$this->requireDir($this->the_path . '/inc');
+		//$this->requireDir($this->the_path . 'lib/inc');
+        require_once($this->the_path . 'lib/inc/settings.php');
+        require_once($this->the_path . 'lib/inc/widgets.php');
         if(!is_admin()){
-    		wp_enqueue_style('msd-social-style',$this->the_url.'css/style.css');
-    		wp_enqueue_style('msd-social-style-'.$this->icon_size,$this->the_url.'css/style'.$this->icon_size.'.css');
+    		wp_enqueue_style('msd-social-style',$this->the_url.'lib/css/style.css');
+    		wp_enqueue_style('msd-social-style-'.$this->icon_size,$this->the_url.'lib/css/style'.$this->icon_size.'.css');
             wp_enqueue_style('font-awesome-style','//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
         }
         add_action('admin_enqueue_scripts', array(&$this,'add_admin_scripts') );
         add_action('admin_enqueue_scripts', array(&$this,'add_admin_styles') );
         
-		add_shortcode('msd-address',array(&$this,'get_address'));
+        add_shortcode('msd-address',array(&$this,'get_address'));
+        add_shortcode('msd-additional-locations',array(&$this,'get_additional_locations'));
 		add_shortcode('msd-bizname',array(&$this,'get_bizname'));
 		add_shortcode('msd-copyright',array(&$this,'get_copyright'));
 		add_shortcode('msd-digits',array(&$this,'get_digits'));
@@ -41,7 +55,7 @@ class MSDSocial{
             global $current_screen;
             if($current_screen->id == 'settings_page_msdsocial-options'){
                 wp_enqueue_script('bootstrap-jquery','//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js',array('jquery'));
-                wp_enqueue_script('timepicker-jquery',$this->the_url.'js/jquery.timepicker.min.js',array('jquery'));
+                wp_enqueue_script('timepicker-jquery',$this->the_url.'lib/js/jquery.timepicker.min.js',array('jquery'));
             }
         }
         
@@ -50,7 +64,7 @@ class MSDSocial{
             if($current_screen->id == 'settings_page_msdsocial-options'){
                 wp_register_style('bootstrap-style','//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css');
                 wp_register_style('font-awesome-style','//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css',array('bootstrap-style'));
-                wp_register_style('timepicker-style',$this->the_url.'css/jquery.timepicker.css');
+                wp_register_style('timepicker-style',$this->the_url.'lib/css/jquery.timepicker.css');
                 wp_enqueue_style('font-awesome-style');
                 wp_enqueue_style('timepicker-style');
             }
@@ -75,6 +89,23 @@ function get_address(){
 		} else {
 			return false;
 		} 
+}
+function get_additional_locations(){
+    $additional_locations = get_option(msdsocial_adtl_locations);
+    $ret = '';
+    foreach($additional_locations AS $loc){
+        if(($loc[street]!='') || ($loc[city]!='') || ($loc[state]!='') || ($loc[zip]!='')) {
+            $ret .= '<address itemscope itemtype="http://schema.org/LocalBusiness">';
+                $ret .= ($loc[location_name]!='')?'<span itemprop="name" class="msdsocial_location_name">'.$loc[location_name].'</span> ':'';
+                $ret .= ($loc[street]!='')?'<span itemprop="streetAddress" class="msdsocial_street">'.$loc[street].'</span> ':'';
+                $ret .= ($loc[street2]!='')?'<span itemprop="streetAddress" class="msdsocial_street_2">'.$loc[street2].'</span> ':'';
+                $ret .= ($loc[city]!='')?'<span itemprop="addressLocality" class="msdsocial_city">'.$loc[city].'</span>, ':'';
+                $ret .= ($loc[state]!='')?'<span itemprop="addressRegion" class="msdsocial_state">'.$loc[state].'</span> ':'';
+                $ret .= ($loc[zip]!='')?'<span itemprop="postalCode" class="msdsocial_zip">'.$loc[zip].'</span> ':'';
+            $ret .= '</address>';
+        }
+    }
+    return $ret;
 }
 
 function get_digits($dowrap = TRUE,$sep = " | "){

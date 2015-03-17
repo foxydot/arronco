@@ -22,14 +22,16 @@ class KohlerConnected extends MSDConnected {
             print '</div>';
             //add_action( 'wp_footer', array(&$this,'tabindex_javascript'), 60);
         }
-        if(($address||$phone||$tollfree||$fax||$email||$social)&&$form_id > 0){
+        if(($address||$phone||$tollfree||$fax||$email||$additional_locations||$social)&&$form_id > 0){
             print '</div>';
         }
-        if(($address||$phone||$tollfree||$fax||$email||$social)&&$form_id > 0){
-            print '<div class="col-md-5 align-right">';
+        if(($address||$phone||$tollfree||$fax||$email||$additional_locations||$social)&&$form_id > 0){
+            print '<div class="col-md-5 col-right">';
         }
-        if ( $address ){
+        if ( $address || $additional_locations ){
             print '<h3>Address</h3>';
+        }
+        if( $address ){
             $bizname = do_shortcode('[msd-bizname]'); 
             if ( $bizname ){
                 print '<div class="connected-bizname">'.$bizname.'</div>';

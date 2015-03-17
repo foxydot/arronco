@@ -151,7 +151,7 @@
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/lib\/bootstrap\/less\/bootstrap.less",
 		"outputAbbreviatedPath": "\/lib\/bootstrap\/css\/bootstrap.css",
@@ -1543,7 +1543,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 1257,
+		"initialSize": 1691,
 		"inputAbbreviatedPath": "\/lib\/img\/bkg-portfolio-sep-wht.png",
 		"outputAbbreviatedPath": "\/lib\/img\/bkg-portfolio-sep-wht.png",
 		"outputPathIsOutsideProject": 0,
@@ -1653,7 +1653,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 7914,
+		"initialSize": 5484,
 		"inputAbbreviatedPath": "\/lib\/img\/logo.png",
 		"outputAbbreviatedPath": "\/lib\/img\/logo.png",
 		"outputPathIsOutsideProject": 0,
@@ -2891,9 +2891,9 @@
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
-	"displayValue": "exhibitionist",
+	"displayValue": "clever-dwelling",
 	"displayValueWasSetByUser": 0,
-	"iconImageName": "compass_darkGray"
+	"iconImageName": "globe_brown"
 	},
 "projectSettings": {
 	"alwaysUseExternalServer": 0,
@@ -3519,7 +3519,7 @@
 	"slimAutoOutputPathReplace1": "",
 	"slimAutoOutputPathReplace2": "",
 	"slimAutoOutputPathStyle": 0,
-	"slimCompileOnly": 1,
+	"slimCompileOnly": 0,
 	"slimLogicless": 0,
 	"slimOutputFormat": 0,
 	"slimOutputStyle": 1,

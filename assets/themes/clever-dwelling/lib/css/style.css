@@ -6766,7 +6766,7 @@ article.entry {
   list-style-type: decimal;
 }
 .entry-content ul li {
-  list-style-type: disc;
+  list-style-type: circle;
 }
 .entry-content ol ol,
 .entry-content ul ul {
@@ -7134,13 +7134,12 @@ Footer Widgets
 .footer-widgets .connected-form a.button:hover {
   background-color: #999999;
 }
-.footer-widgets .align-right {
-  text-align: right;
+.footer-widgets .col-right {
   text-transform: uppercase;
   font-size: 14px;
   font-size: 1.4rem;
 }
-.footer-widgets .align-right .connected-bizname {
+.footer-widgets .col-right .connected-bizname {
   font-weight: 700;
 }
 .footer-widgets h3,
@@ -7154,8 +7153,48 @@ Footer Widgets
 .footer-widgets .connected-address span.msdsocial_street {
   display: block;
 }
+.footer-widgets .connected-additional-locations {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.footer-widgets .connected-additional-locations:before,
+.footer-widgets .connected-additional-locations:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.footer-widgets .connected-additional-locations:after {
+  clear: both;
+}
+.footer-widgets .connected-additional-locations:before,
+.footer-widgets .connected-additional-locations:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.footer-widgets .connected-additional-locations:after {
+  clear: both;
+}
+.footer-widgets .connected-additional-locations address {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 992px) {
+  .footer-widgets .connected-additional-locations address {
+    float: left;
+    width: 50%;
+  }
+}
+.footer-widgets .connected-additional-locations address .msdsocial_location_name,
+.footer-widgets .connected-additional-locations address .msdsocial_street {
+  display: block;
+}
 .footer-widgets .connected-social .social-media {
-  float: right;
+  float: left;
 }
 .footer-widgets .connected-social .social-media a.fa {
   background: none;
@@ -7270,6 +7309,9 @@ Site Footer
   font-weight: 300;
   color: #5e5f61;
   line-height: 1.25;
+}
+.sectioned-page-wrapper .section .section-body .wrap ul li {
+  list-style-type: circle;
 }
 .sectioned-page-wrapper .section-the-geothermal-advantages {
   text-align: center;

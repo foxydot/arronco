@@ -12,7 +12,7 @@ if(!class_exists('GitHubPluginUpdater')){
 }
 
 if ( is_admin() ) {
-    new GitHubPluginUpdater( __FILE__, 'msdlab', "msd_site_settings" );
+    new GitHubPluginUpdater( __FILE__, 'msdlab', "msd-specialty-pages" );
 }
 
 if(!class_exists('WPAlchemy_MetaBox')){

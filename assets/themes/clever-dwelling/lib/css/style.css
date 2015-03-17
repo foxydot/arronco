@@ -7190,8 +7190,13 @@ Footer Widgets
   }
 }
 .footer-widgets .connected-additional-locations address .msdsocial_location_name,
-.footer-widgets .connected-additional-locations address .msdsocial_street {
+.footer-widgets .connected-additional-locations address .msdsocial_street,
+.footer-widgets .connected-additional-locations address .msdsocial_phone,
+.footer-widgets .connected-additional-locations address .msdsocial_fax {
   display: block;
+}
+.footer-widgets .connected-additional-locations address .msdsocial_phone {
+  margin-top: 2em;
 }
 .footer-widgets .connected-social .social-media {
   float: left;

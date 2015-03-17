@@ -2,7 +2,7 @@
 /*
 Plugin Name: MSD Site Settings
 Description: Provides settings panel for several social/address options and widgets/shortcodes/functions for display.
-Version: 0.8.1
+Version: 0.8.2
 Author: Catherine M OBrien Sandrick (CMOS)
 Author URI: http://msdlab.com/biological-assets/catherine-obrien-sandrick/
 GitHub Plugin URI: https://github.com/msdlab/msd_site_settings
@@ -102,7 +102,7 @@ function get_additional_locations(){
                 $ret .= ($loc[city]!='')?'<span itemprop="addressLocality" class="msdsocial_city">'.$loc[city].'</span>, ':'';
                 $ret .= ($loc[state]!='')?'<span itemprop="addressRegion" class="msdsocial_state">'.$loc[state].'</span> ':'';
                 $ret .= ($loc[zip]!='')?'<span itemprop="postalCode" class="msdsocial_zip">'.$loc[zip].'</span> ':'';
-                $ret .= $this->get_location_digits($loc);
+                $ret .= $this->get_location_digits($loc,FALSE,'');
             $ret .= '</address>';
         }
     }
@@ -114,33 +114,33 @@ function get_digits($dowrap = TRUE,$sep = " | "){
 		if((get_option('msdsocial_phone')!='') || (get_option('msdsocial_tollfree')!='') || (get_option('msdsocial_fax')!='')) {
 		    if((get_option('msdsocial_tracking_phone')!='')){
 		        if(wp_is_mobile()){
-		          $phone .= 'Phone: <a href="tel:+1'.get_option('msdsocial_tracking_phone').'">'.get_option('msdsocial_tracking_phone').'</a> ';
+		          $phone .= '<span itemprop="telephone" class="msdsocial_phone"><a href="tel:+1'.get_option('msdsocial_tracking_phone').'">'.get_option('msdsocial_tracking_phone').'</a></span> ';
 		        } else {
-		          $phone .= 'Phone: <span>'.get_option('msdsocial_tracking_phone').'</span> ';
+		          $phone .= '<span itemprop="telephone" class="msdsocial_phone">'.get_option('msdsocial_tracking_phone').'</span> ';
 		        }
-		      $phone .= '<span itemprop="telephone" style="display: none;">'.get_option('msdsocial_phone').'</span> ';
+		      $phone .= '<span  itemprop="telephone" class="msdsocial_phone" style="display: none;">'.get_option('msdsocial_phone').'</span> ';
 		    } else {
 		        if(wp_is_mobile()){
-		          $phone .= (get_option('msdsocial_phone')!='')?'Phone: <a href="tel:+1'.get_option('msdsocial_phone').'" itemprop="telephone">'.get_option('msdsocial_phone').'</a> ':'';
+		          $phone .= (get_option('msdsocial_phone')!='')?'<span itemprop="telephone" class="msdsocial_phone"><a href="tel:+1'.get_option('msdsocial_phone').'" itemprop="telephone">'.get_option('msdsocial_phone').'</a></span> ':'';
 		        } else {
-                  $phone .= (get_option('msdsocial_phone')!='')?'Phone: <span itemprop="telephone">'.get_option('msdsocial_phone').'</span> ':'';
+                  $phone .= (get_option('msdsocial_phone')!='')?'<span itemprop="telephone" class="msdsocial_phone">'.get_option('msdsocial_phone').'</span> ':'';
 		        }
 		    }
             if((get_option('msdsocial_tracking_tollfree')!='')){
                 if(wp_is_mobile()){
-                  $tollfree .= 'Phone: <a href="tel:+1'.get_option('msdsocial_tracking_tollfree').'">'.get_option('msdsocial_tracking_tollfree').'</a> ';
+                  $tollfree .= '<span itemprop="telephone" class="msdsocial_tollfree"><a href="tel:+1'.get_option('msdsocial_tracking_tollfree').'">'.get_option('msdsocial_tracking_tollfree').'</a></span> ';
                 } else {
-                  $tollfree .= 'Phone: <span>'.get_option('msdsocial_tracking_tollfree').'</span> ';
+                  $tollfree .= '<span itemprop="telephone" class="msdsocial_tollfree">'.get_option('msdsocial_tracking_tollfree').'</span> ';
                 }
-              $tollfree .= '<span itemprop="telephone" style="display: none;">'.get_option('msdsocial_tollfree').'</span> ';
+              $tollfree .= '<span itemprop="telephone" class="msdsocial_tollfree" style="display: none;">'.get_option('msdsocial_tollfree').'</span> ';
             } else {
                 if(wp_is_mobile()){
-                  $tollfree .= (get_option('msdsocial_tollfree')!='')?'Phone: <a href="tel:+1'.get_option('msdsocial_tollfree').'" itemprop="telephone">'.get_option('msdsocial_tollfree').'</a> ':'';
+                  $tollfree .= (get_option('msdsocial_tollfree')!='')?'<span itemprop="telephone" class="msdsocial_tollfree"><a href="tel:+1'.get_option('msdsocial_tollfree').'" itemprop="telephone">'.get_option('msdsocial_tollfree').'</a></span> ':'';
                 } else {
-                  $tollfree .= (get_option('msdsocial_tollfree')!='')?'Phone: <span itemprop="telephone">'.get_option('msdsocial_tollfree').'</span> ':'';
+                  $tollfree .= (get_option('msdsocial_tollfree')!='')?'<span itemprop="telephone" class="msdsocial_tollfree">'.get_option('msdsocial_tollfree').'</span> ':'';
                 }
             }
-            $fax = (get_option('msdsocial_fax')!='')?'Fax: <span itemprop="faxNumber">'.get_option('msdsocial_fax').'</span> ':'';
+            $fax = (get_option('msdsocial_fax')!='')?'<span itemprop="faxNumber" class="msdsocial_fax">'.get_option('msdsocial_fax').'</span> ':'';
             $ret = $phone;
             $ret .= ($phone!='' && $tollfree!='')?$sep:'';
             $ret .= $tollfree;
@@ -158,33 +158,33 @@ function get_location_digits($loc,$dowrap = TRUE,$sep = " | "){
         if(($loc[phone]!='') || ($loc[tollfree]!='') || ($loc[fax]!='')) {
             if(($loc[tracking_phone]!='')){
                 if(wp_is_mobile()){
-                  $phone .= 'Phone: <a href="tel:+1'.$loc[tracking_phone].'">'.$loc[tracking_phone].'</a> ';
+                  $phone .= '<span itemprop="telephone" class="msdsocial_phone"><a href="tel:+1'.$loc[tracking_phone].'">'.$loc[tracking_phone].'</a></span> ';
                 } else {
-                  $phone .= 'Phone: <span>'.$loc[tracking_phone].'</span> ';
+                  $phone .= '<span itemprop="telephone" class="msdsocial_phone">'.$loc[tracking_phone].'</span> ';
                 }
-              $phone .= '<span itemprop="telephone" style="display: none;">'.$loc[phone].'</span> ';
+              $phone .= '<span itemprop="telephone" class="msdsocial_phone" style="display: none;">'.$loc[phone].'</span> ';
             } else {
                 if(wp_is_mobile()){
-                  $phone .= ($loc[phone]!='')?'Phone: <a href="tel:+1'.$loc[phone].'" itemprop="telephone">'.$loc[phone].'</a> ':'';
+                  $phone .= ($loc[phone]!='')?'<span itemprop="telephone" class="msdsocial_phone"><a href="tel:+1'.$loc[phone].'" itemprop="telephone">'.$loc[phone].'</a></span> ':'';
                 } else {
-                  $phone .= ($loc[phone]!='')?'Phone: <span itemprop="telephone">'.$loc[phone].'</span> ':'';
+                  $phone .= ($loc[phone]!='')?'<span itemprop="telephone" class="msdsocial_phone">'.$loc[phone].'</span> ':'';
                 }
             }
             if(($loc[tracking_tollfree]!='')){
                 if(wp_is_mobile()){
-                  $tollfree .= 'Phone: <a href="tel:+1'.$loc[tracking_tollfree].'">'.$loc[tracking_tollfree].'</a> ';
+                  $tollfree .= '<span itemprop="telephone" class="msdsocial_tollfree"><a href="tel:+1'.$loc[tracking_tollfree].'">'.$loc[tracking_tollfree].'</a></span> ';
                 } else {
-                  $tollfree .= 'Phone: <span>'.$loc[tracking_tollfree].'</span> ';
+                  $tollfree .= '<span itemprop="telephone" class="msdsocial_tollfree">'.$loc[tracking_tollfree].'</span> ';
                 }
-              $tollfree .= '<span itemprop="telephone" style="display: none;">'.$loc[tollfree].'</span> ';
+              $tollfree .= '<span itemprop="telephone" class="msdsocial_tollfree" style="display: none;">'.$loc[tollfree].'</span> ';
             } else {
                 if(wp_is_mobile()){
-                  $tollfree .= ($loc[tollfree]!='')?'Phone: <a href="tel:+1'.$loc[tollfree].'" itemprop="telephone">'.$loc[tollfree].'</a> ':'';
+                  $tollfree .= ($loc[tollfree]!='')?'<span itemprop="telephone" class="msdsocial_tollfree"><a href="tel:+1'.$loc[tollfree].'" itemprop="telephone">'.$loc[tollfree].'</a></span> ':'';
                 } else {
-                  $tollfree .= ($loc[tollfree]!='')?'Phone: <span itemprop="telephone">'.$loc[tollfree].'</span> ':'';
+                  $tollfree .= ($loc[tollfree]!='')?'<span itemprop="telephone" class="msdsocial_tollfree">'.$loc[tollfree].'</span> ':'';
                 }
             }
-            $fax = ($loc[fax]!='')?'Fax: <span itemprop="faxNumber">'.$loc[fax].'</span> ':'';
+            $fax = ($loc[fax]!='')?'<span itemprop="faxNumber" class="msdsocial_fax">'.$loc[fax].'</span> ':'';
             $ret = $phone;
             $ret .= ($phone!='' && $tollfree!='')?$sep:'';
             $ret .= $tollfree;

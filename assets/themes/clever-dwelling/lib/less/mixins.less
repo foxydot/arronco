@@ -97,6 +97,17 @@
   .background-image(linear-gradient(to bottom, darken(@color,20%) 0%,lighten(@color,20%) 100%))
 }
 
+/* Centered Vertical Line - using CSS3 gradients */
+.centered-vert-line(@midColor: #ccc, @width: 1px, @startColor: transparent, @endColor: transparent, @deg: 90deg, @pos: 50%) {
+  background-image: -moz-linear-gradient(@deg, @startColor, @midColor, @endColor); // FF 3.6+
+  background-image: -webkit-linear-gradient(@deg, @startColor, @midColor, @endColor); // Safari 5.1+, Chrome 10+
+  background-image: -o-linear-gradient(@deg, @startColor, @midColor, @endColor); // Opera 11.10
+  background-image: linear-gradient(@deg, @startColor, @midColor, @endColor); // Standard, IE10
+  background-position: @pos;
+  background-repeat: repeat-y;
+  background-size: @width 100px;
+ }
+
 /* Buttons */
 .button(@color:@green) {
   background-color: @color;

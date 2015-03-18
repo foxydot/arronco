@@ -5575,6 +5575,7 @@ td.visible-print {
 /* Colors */
 /* Neutrals */
 /* Gradients */
+/* Centered Vertical Line - using CSS3 gradients */
 /* Buttons */
 .button:hover,
 .button:visited,
@@ -7318,6 +7319,58 @@ Site Footer
 .sectioned-page-wrapper .section .section-body .wrap ul li {
   list-style-type: circle;
 }
+.sectioned-page-wrapper .section.bkg-green {
+  background-color: rgba(156, 167, 40, 0.2);
+}
+.sectioned-page-wrapper .section.bkg-offwhite {
+  background-color: #f8f8f8;
+}
+.sectioned-page-wrapper .section.bkg-mdgrey {
+  background-color: #5e5f61;
+}
+.sectioned-page-wrapper .section.bkg-dkgrey {
+  background-color: #1a1a1a;
+}
+.sectioned-page-wrapper .section.bkg-dkgrey,
+.sectioned-page-wrapper .section.bkg-mdgrey {
+  color: #ffffff;
+}
+.sectioned-page-wrapper .section.bkg-dkgrey .section-title h3,
+.sectioned-page-wrapper .section.bkg-mdgrey .section-title h3 {
+  color: #ffffff;
+}
+.sectioned-page-wrapper .section.section-values .section-body ul {
+  -moz-column-count: 3;
+  -moz-column-gap: 20px;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 20px;
+  column-count: 3;
+  column-gap: 20px;
+  text-align: left;
+  margin-top: 2rem;
+}
+.sectioned-page-wrapper .section.section-values .section-body ul li {
+  list-style: none outside none;
+  min-height: 150px;
+  text-indent: -5.2em;
+  margin-left: 5.2em;
+  padding-left: 1.4em;
+  border-left: 1px solid rgba(94, 95, 97, 0.2);
+  margin-bottom: 2em;
+}
+.sectioned-page-wrapper .section.section-values .section-body ul li:before {
+  font-family: FontAwesome;
+  content: '\f00c';
+  font-size: 1.4em;
+  border: 1px solid #cdd85d;
+  color: #cdd85d;
+  border-radius: 100%;
+  padding: 0.3em;
+  margin-right: 2em;
+  position: relative;
+  line-height: 0;
+  top: 0.2em;
+}
 .sectioned-page-wrapper .section-the-geothermal-advantages {
   text-align: center;
   color: #ffffff;
@@ -7440,6 +7493,10 @@ Site Footer
 }
 .footer-widgets .msd-connected .widget-wrap .wrap div.last-child {
   padding-right: 0;
+}
+.about .site-inner,
+.about .sectioned-page-wrapper {
+  text-align: center;
 }
 .nav-responsive ul,
 .nav-responsive li,

@@ -1,3 +1,19 @@
+.about{
+  .site-inner, .sectioned-page-wrapper{
+    .entry-title,.entry-subtitle,
+    .section-title,.section-subtitle{
+      text-align: center;
+    }
+    .entry-subtitle{
+      .customheader(3.6);
+      font-weight: 500;
+      color: @green;
+      line-height: 1.25;
+      margin: 0;
+    }
+  }
+}
+
 .sectioned-page-wrapper{
   .section{
     background-repeat: no-repeat;
@@ -30,6 +46,9 @@
   }
   .section.bkg-green{
     background-color: fade(@green,20%);
+    .section-subtitle{
+      color: @mdgrey;
+    }
   }
   .section.bkg-offwhite{
     background-color: @offwhite;

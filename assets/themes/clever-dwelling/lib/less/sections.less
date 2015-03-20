@@ -62,7 +62,7 @@
         margin-top: 2rem;
         li{
           list-style: none outside none;
-          min-height: 150px;
+          min-height: 180px;
           text-indent: -5.2em;
           margin-left: 5.2em;
           padding-left: 1.4em;
@@ -80,6 +80,29 @@
             position: relative;
             line-height: 0;
             top: 0.2em;
+          }
+        }
+      }
+    }
+  }
+  .section.section-explore{
+    text-align: left;
+    .section-body{
+      .wrap{
+        position: relative;
+        p{margin:0;}
+        .button-wrapper{
+          position: absolute;
+          display: table;
+          top:-2rem;
+          right:0;
+          .button{
+            background: fade(@mdgrey,0%);
+            border: 1px solid @white;
+            color: @white;
+            &:hover{
+              background: fade(@mdgrey,70%);
+            }
           }
         }
       }

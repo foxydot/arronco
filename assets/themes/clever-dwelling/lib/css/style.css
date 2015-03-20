@@ -5599,6 +5599,15 @@ td.visible-print {
   text-decoration: none;
   background-color: #767e1e;
 }
+.button:hover:after,
+.button:visited:after,
+.button a:after,
+.button a:hover:after,
+.button a:visited:after {
+  font-family: FontAwesome;
+  content: ' \f178';
+  padding-left: 1rem;
+}
 /* Clears */
 .msd-clearfix {
   content: ".";
@@ -5821,6 +5830,16 @@ input[type="submit"],
   -o-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
+button:after,
+input[type="button"]:after,
+input[type="reset"]:after,
+input[type="submit"]:after,
+.button:after,
+.entry-content .button:after {
+  font-family: FontAwesome;
+  content: ' \f178';
+  padding-left: 1rem;
+}
 button:hover,
 input:hover[type="button"],
 input:hover[type="reset"],
@@ -5843,6 +5862,16 @@ input:hover[type="submit"],
   margin: 12px auto;
   text-decoration: none;
   background-color: #767e1e;
+}
+button:hover:after,
+input:hover[type="button"]:after,
+input:hover[type="reset"]:after,
+input:hover[type="submit"]:after,
+.button:hover:after,
+.entry-content .button:hover:after {
+  font-family: FontAwesome;
+  content: ' \f178';
+  padding-left: 1rem;
 }
 .entry-content .button:hover {
   color: #ffffff;
@@ -7052,6 +7081,16 @@ Sidebars
   transition: all 0.1s ease-in-out;
   float: right;
 }
+.sidebar .widget_text .textwidget .readmore:after {
+  font-family: FontAwesome;
+  content: ' \f178';
+  padding-left: 1rem;
+}
+.sidebar .widget_text .textwidget .readmore:after {
+  font-family: FontAwesome;
+  content: ' \f178';
+  padding-left: 1rem;
+}
 .sidebar .widget_text a {
   border: none;
 }
@@ -7351,7 +7390,7 @@ Site Footer
 }
 .sectioned-page-wrapper .section.section-values .section-body ul li {
   list-style: none outside none;
-  min-height: 150px;
+  min-height: 180px;
   text-indent: -5.2em;
   margin-left: 5.2em;
   padding-left: 1.4em;
@@ -7370,6 +7409,29 @@ Site Footer
   position: relative;
   line-height: 0;
   top: 0.2em;
+}
+.sectioned-page-wrapper .section.section-explore {
+  text-align: left;
+}
+.sectioned-page-wrapper .section.section-explore .section-body .wrap {
+  position: relative;
+}
+.sectioned-page-wrapper .section.section-explore .section-body .wrap p {
+  margin: 0;
+}
+.sectioned-page-wrapper .section.section-explore .section-body .wrap .button-wrapper {
+  position: absolute;
+  display: table;
+  top: -2rem;
+  right: 0;
+}
+.sectioned-page-wrapper .section.section-explore .section-body .wrap .button-wrapper .button {
+  background: rgba(94, 95, 97, 0);
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+.sectioned-page-wrapper .section.section-explore .section-body .wrap .button-wrapper .button:hover {
+  background: rgba(94, 95, 97, 0.7);
 }
 .sectioned-page-wrapper .section-the-geothermal-advantages {
   text-align: center;
@@ -7487,6 +7549,11 @@ Site Footer
   text-decoration: none;
   border: 2px solid #ffffff;
   margin-left: 0;
+}
+.footer-widgets .savings .widget-wrap .readmore span:after {
+  font-family: FontAwesome;
+  content: ' \f178';
+  padding-left: 1rem;
 }
 .footer-widgets .msd-connected .widget-wrap .wrap div.first-child {
   padding-left: 0;

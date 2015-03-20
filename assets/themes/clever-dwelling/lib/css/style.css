@@ -7438,6 +7438,9 @@ Site Footer
 .sectioned-page-wrapper .section.section-explore {
   text-align: left;
 }
+.sectioned-page-wrapper .section.section-explore .section-title {
+  text-align: left;
+}
 .sectioned-page-wrapper .section.section-explore .section-body .wrap {
   position: relative;
 }

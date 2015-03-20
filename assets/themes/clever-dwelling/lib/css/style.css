@@ -7403,6 +7403,34 @@ Site Footer
 .sectioned-page-wrapper .section.bkg-mdgrey .section-title h3 {
   color: #ffffff;
 }
+.sectioned-page-wrapper .section.hero {
+  min-height: 650px;
+  text-align: center;
+}
+.sectioned-page-wrapper .section.hero .section-title {
+  margin-top: 500px;
+}
+.sectioned-page-wrapper .section.hero .section-title h3 {
+  text-shadow: 0 0 12px rgba(26, 26, 26, 0.8);
+}
+.sectioned-page-wrapper .section.hero .section-body {
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(26, 26, 26, 0.8);
+}
+.sectioned-page-wrapper .section.hero .section-body .section-subtitle {
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(26, 26, 26, 0.8);
+}
+.sectioned-page-wrapper .section.hero .section-body .button-wrapper .button {
+  background: rgba(94, 95, 97, 0);
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(26, 26, 26, 0.8);
+  text-shadow: 0 0 12px rgba(26, 26, 26, 0.8);
+}
+.sectioned-page-wrapper .section.hero .section-body .button-wrapper .button:hover {
+  background: rgba(94, 95, 97, 0.7);
+}
 .sectioned-page-wrapper .section.section-values .section-body ul {
   -moz-column-count: 3;
   -moz-column-gap: 20px;

@@ -99,10 +99,25 @@
     }
   }
   .section-service-menu{
+    padding:0;
     .menu{
       .make-row();
       .menu-item{
         .make-md-column(3);
+        text-align: center;
+        background-color: fade(@white,20%);
+        border-right: 1px solid fade(@white,80%);
+        font-size: 2.2rem;
+        text-shadow: 1px 1px 4px fade(@dkgrey,60%);
+        &:hover{
+          background-color: fade(@white,40%);
+        }
+        &:first-child{
+          border-left: 1px solid fade(@white,80%);
+        }
+        a, a:visited, a:hover{
+          color: @white;
+        }
       }
     }
   }

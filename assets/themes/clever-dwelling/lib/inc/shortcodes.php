@@ -1,4 +1,33 @@
 <?php
+add_shortcode('menu','msdlab_display_menu');
+function msdlab_display_menu($atts, $content = null){
+    extract( shortcode_atts( array(
+      'menu_id' => false,
+      ), $atts ) );
+      if($menu_id){
+          $args = array(
+            'theme_location'  => '',
+            'menu'            => $menu_id,
+            'container'       => 'nav',
+            'container_class' => 'genesis-nav-menu',
+            'container_id'    => '',
+            'menu_class'      => 'menu',
+            'menu_id'         => '',
+            'echo'            => false,
+            'fallback_cb'     => 'wp_page_menu',
+            'before'          => '',
+            'after'           => '',
+            'link_before'     => '',
+            'link_after'      => '',
+            'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+            'depth'           => 0,
+            'walker'          => ''
+        );
+        return wp_nav_menu( $args );
+      } else {
+          return false;
+      }
+}
 add_shortcode('button','msdlab_button_function');
 function msdlab_button_function($atts, $content = null){	
 	extract( shortcode_atts( array(

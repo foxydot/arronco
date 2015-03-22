@@ -7486,6 +7486,64 @@ Site Footer
 .sectioned-page-wrapper .section-service-menu .menu .menu-item a:hover {
   color: #ffffff;
 }
+.sectioned-page-wrapper .section.section-locations {
+  text-align: center;
+  padding: 6rem 0;
+}
+.sectioned-page-wrapper .section.section-locations .location-title {
+  font-family: "Sceptica", "Trebuchet MS", Calibri, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.625;
+  text-transform: uppercase;
+  color: #9ca728;
+  font-size: 2.2rem;
+}
+.sectioned-page-wrapper .section.section-locations .location-phone {
+  font-family: "Sceptica", "Trebuchet MS", Calibri, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.625;
+}
+.sectioned-page-wrapper .section.section-testimonials {
+  text-align: center;
+}
+.sectioned-page-wrapper .section.section-testimonials .quote p {
+  position: relative;
+}
+.sectioned-page-wrapper .section.section-testimonials .quote p:before,
+.sectioned-page-wrapper .section.section-testimonials .quote p:after {
+  font-family: "Sceptica", "Trebuchet MS", Calibri, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.625;
+  color: #cccccc;
+  font-size: 6em;
+  line-height: 0;
+  position: relative;
+  top: 0.5em;
+  display: inline-block;
+}
+.sectioned-page-wrapper .section.section-testimonials .quote p:before {
+  content: "\201C";
+}
+.sectioned-page-wrapper .section.section-testimonials .quote p:after {
+  position: absolute;
+  top: 110%;
+  content: "\201D";
+}
+.sectioned-page-wrapper .section.section-testimonials .attribution {
+  font-family: "Sceptica", "Trebuchet MS", Calibri, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.625;
+  color: #9ca728;
+  font-style: italic;
+}
 .sectioned-page-wrapper .section.section-values .section-body ul {
   -moz-column-count: 3;
   -moz-column-gap: 20px;

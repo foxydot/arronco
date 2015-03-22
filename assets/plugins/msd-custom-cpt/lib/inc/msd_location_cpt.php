@@ -29,6 +29,8 @@ if (!class_exists('MSDLocationCPT')) {
 			//Filters
 			add_filter( 'pre_get_posts', array(&$this,'custom_query') );
 			add_filter( 'enter_title_here', array(&$this,'change_default_title') );
+            
+            add_shortcode('locations-output',array(&$this,'locations_output'));
 		}
 		
 		function register_cpt_location() {
@@ -159,6 +161,39 @@ if (!class_exists('MSDLocationCPT')) {
 					$query->set( 'post_type', array('post','page',$this->cpt) );
 				}
 			}
-		}			
+		}		
+        
+        function locations_output( $atts ){
+            $args = ( shortcode_atts( array(
+                'posts_per_page'   => -1,
+                'offset'           => 0,
+                'category'         => '',
+                'category_name'    => '',
+                'orderby'          => 'menu_order',
+                'order'            => 'ASC',
+                'include'          => '',
+                'exclude'          => '',
+                'meta_key'         => '',
+                'meta_value'       => '',
+                'post_type'        => $this->cpt,
+                'post_mime_type'   => '',
+                'post_parent'      => '',
+                'post_status'      => 'publish',
+                'suppress_filters' => true 
+              ), $atts ) );
+              $posts = get_posts($args);
+              $cols = floor(12/count($posts));
+              $ret = '';
+              foreach($posts AS $post){
+                  $thumb = get_the_post_thumbnail( $post->ID, '200x300' );
+                  $address = get_post_meta($post->ID, '_location_address', true);
+                  $ret .= '<div class="col-md-'.$cols.' col-xs-12">
+                    '.$thumb.'
+                    <div class="location-title">'.$post->post_title.'</div>
+                    <div class="location-phone">'.$address[0]['phone'].'</div>
+                  </div>';
+              }
+              return '<div class="row">'.$ret.'</div>';
+        }	
   } //End Class
 } //End if class exists statement

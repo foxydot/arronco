@@ -121,6 +121,49 @@
       }
     }
   }
+  .section.section-locations{
+    text-align: center;
+    padding: 6rem 0;
+    .location-title{
+      .customheader;
+      text-transform: uppercase;
+      color: @green;
+      font-size: 2.2rem;
+    }
+    .location-phone{
+      .customheader;
+    }
+  }
+  .section.section-testimonials{
+    text-align: center;
+    .quote{
+      p{
+        position: relative;
+        &:before,&:after{
+          .customheader;
+          color: @vltgrey;
+          font-size: 6em;
+          line-height: 0;
+          position: relative;
+          top: 0.5em;
+          display: inline-block;
+        }
+        &:before{
+          content:"\201C";
+        }
+        &:after{
+          position: absolute;
+          top: 110%;
+          content:"\201D";
+        }
+      }
+     }
+     .attribution{
+       .customheader;
+       color: @green;
+       font-style: italic;
+     }
+  }
   //About Page
   .section.section-values{
     .section-body{

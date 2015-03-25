@@ -19,5 +19,8 @@ jQuery(document).ready(function($) {
 			return '<li class="separator">|</li>';
 		}
 	});
-	
+	$('.mega-stack').removeClass('mega-menu-columns-2-of-8').wrapAll('<div class="stacked"></div>');
+	$('.mega-menu-item-type-widget').height(function(){
+	    return $(this).parent().height();
+	});
 });

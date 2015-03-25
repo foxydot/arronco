@@ -6761,6 +6761,67 @@ Site Navigation
 #mega-menu-wrap-primary #mega-menu-primary a {
   position: static;
 }
+#mega-menu-wrap-primary .mega-stack,
+#mega-menu-wrap-primary #mega-menu-primary .mega-stack,
+#mega-menu-wrap-primary #mega-menu-primary ul .mega-stack,
+#mega-menu-wrap-primary #mega-menu-primary li .mega-stack,
+#mega-menu-wrap-primary #mega-menu-primary p .mega-stack,
+#mega-menu-wrap-primary #mega-menu-primary img .mega-stack,
+#mega-menu-wrap-primary #mega-menu-primary div .mega-stack,
+#mega-menu-wrap-primary #mega-menu-primary a .mega-stack {
+  float: none;
+}
+#mega-menu-wrap-primary .mega-menu-item-type-widget,
+#mega-menu-wrap-primary #mega-menu-primary .mega-menu-item-type-widget,
+#mega-menu-wrap-primary #mega-menu-primary ul .mega-menu-item-type-widget,
+#mega-menu-wrap-primary #mega-menu-primary li .mega-menu-item-type-widget,
+#mega-menu-wrap-primary #mega-menu-primary p .mega-menu-item-type-widget,
+#mega-menu-wrap-primary #mega-menu-primary img .mega-menu-item-type-widget,
+#mega-menu-wrap-primary #mega-menu-primary div .mega-menu-item-type-widget,
+#mega-menu-wrap-primary #mega-menu-primary a .mega-menu-item-type-widget {
+  background: rgba(79, 85, 20, 0.3);
+}
+#mega-menu-wrap-primary .stacked,
+#mega-menu-wrap-primary #mega-menu-primary .stacked,
+#mega-menu-wrap-primary #mega-menu-primary ul .stacked,
+#mega-menu-wrap-primary #mega-menu-primary li .stacked,
+#mega-menu-wrap-primary #mega-menu-primary p .stacked,
+#mega-menu-wrap-primary #mega-menu-primary img .stacked,
+#mega-menu-wrap-primary #mega-menu-primary div .stacked,
+#mega-menu-wrap-primary #mega-menu-primary a .stacked {
+  width: 12.5%;
+  float: left;
+}
+#mega-menu-wrap-primary .stacked > li.mega-menu-item,
+#mega-menu-wrap-primary #mega-menu-primary .stacked > li.mega-menu-item,
+#mega-menu-wrap-primary #mega-menu-primary ul .stacked > li.mega-menu-item,
+#mega-menu-wrap-primary #mega-menu-primary li .stacked > li.mega-menu-item,
+#mega-menu-wrap-primary #mega-menu-primary p .stacked > li.mega-menu-item,
+#mega-menu-wrap-primary #mega-menu-primary img .stacked > li.mega-menu-item,
+#mega-menu-wrap-primary #mega-menu-primary div .stacked > li.mega-menu-item,
+#mega-menu-wrap-primary #mega-menu-primary a .stacked > li.mega-menu-item {
+  clear: none;
+  display: block;
+  font-family: inherit;
+  padding: 15px;
+  vertical-align: top;
+}
+#mega-menu-wrap-primary .stacked > li.mega-menu-item > a,
+#mega-menu-wrap-primary #mega-menu-primary .stacked > li.mega-menu-item > a,
+#mega-menu-wrap-primary #mega-menu-primary ul .stacked > li.mega-menu-item > a,
+#mega-menu-wrap-primary #mega-menu-primary li .stacked > li.mega-menu-item > a,
+#mega-menu-wrap-primary #mega-menu-primary p .stacked > li.mega-menu-item > a,
+#mega-menu-wrap-primary #mega-menu-primary img .stacked > li.mega-menu-item > a,
+#mega-menu-wrap-primary #mega-menu-primary div .stacked > li.mega-menu-item > a,
+#mega-menu-wrap-primary #mega-menu-primary a .stacked > li.mega-menu-item > a {
+  display: inline-block;
+  font-family: inherit;
+  font-weight: bold;
+  margin: 0;
+  padding: 0 0 5px;
+  text-transform: uppercase;
+  vertical-align: top;
+}
 /*
 Content Area
 ---------------------------------------------------------------------------------------------------- */

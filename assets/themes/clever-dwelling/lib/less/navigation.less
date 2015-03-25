@@ -375,5 +375,32 @@ Site Navigation
 #mega-menu-wrap-primary #mega-menu-primary p, #mega-menu-wrap-primary #mega-menu-primary img, 
 #mega-menu-wrap-primary #mega-menu-primary div, #mega-menu-wrap-primary #mega-menu-primary a{
   position: static;
+  .mega-stack{
+    float: none;
+  }
+  .mega-menu-item-type-widget{
+    background: fade(@dkgreen,30%);
+  }
+  .stacked{
+    width: 12.5%;
+    float: left;
+    >li.mega-menu-item{
+    clear: none;
+    display: block;
+    font-family: inherit;
+    padding: 15px;
+    vertical-align: top;
+      >a{
+        display: inline-block;
+        font-family: inherit;
+        font-weight: bold;
+        margin: 0;
+        padding: 0 0 5px;
+        text-transform: uppercase;
+        vertical-align: top;
+      }
+    }
+  }
 }
+
 

@@ -79,7 +79,8 @@ function msdlab_team(){
     
             $msd_team_display = new MSDTeamDisplay;
             $team = $msd_team_display->get_all_team_members();
-            $ret = '<div id="team-members">';
+            $ret = '<div id="team-members"><div class="hex_row_odd">';
+            $row = $i = 1;
             foreach($team AS $team_member){
                 $headshot = get_the_post_thumbnail($team_member->ID,'headshot-md');
                 $headshot_url = msdlab_get_thumbnail_url($team_member->ID,'headshot-md');
@@ -121,7 +122,13 @@ function msdlab_team(){
                     $team_contact_info .= '<li class="email"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span> '.msd_str_fmt($contact_info_metabox->get_the_value(),'email').'</li>';
                 }
                 $teamstr = '<div class="center">
-    <div class="hexagon">
+    <div class="hexagon bkg">
+      <div class="hex1 bkg">
+        <div class="hex2 bkg">
+        </div>
+      </div>
+    </div>
+    <div class="hexagon fg">
       <div class="hex1">
         <div class="hex2" style="background: url('.$headshot_url.') center no-repeat">
           <div class="desc">
@@ -134,8 +141,17 @@ function msdlab_team(){
       </div><!--/hex1-->
     </div><!--/hexagon--> 
   </div><!--/center-->';
-                $ret .= $teamstr;        
+                $ret .= $teamstr;   
+                $i++;
+                $eo = $row%2==0?'even':'odd';
+                if(($eo=='even' && $i==7) || ($eo=='odd' && $i==6)){
+                    $eo = $row%2==0?'even':'odd';
+                    $ret .= '</div><div class="hex_row_'.$eo.'">';
+                    $i = 0;
+                    $row++;
+                } 
             }
+            $ret .= '</div>';
             $ret .= '</div>';
             return $ret;
         }

@@ -1,4 +1,4 @@
-@hexwidth: 160px;
+@hexwidth: 160px;@hexborder: 4px;
 .about{
   .site-inner, .sectioned-page-wrapper{
     .entry-title,.entry-subtitle,
@@ -259,10 +259,31 @@
     }
   }
   .section.section-employees{
+    #team-members{
+  margin: 0 auto;
+  text-align: center;
+  top: -@hexwidth/2;
+  position: relative;
+  display: block;
+  line-height: 1;
+  
+.hex_row_even {
+  display: inline-block;
+  margin: 0 auto -@hexwidth*1.3 auto;
+  overflow: hidden;
+}
+
+.hex_row_odd {
+  display: inline-block;
+  margin: 0 auto -@hexwidth*1.3 auto;
+  overflow: hidden;
+} 
+
     .center {
-      float: left;
       margin: 20px 10px;
       width: @hexwidth;
+      position: relative;
+      float: left;
     }
     
     .hexagon {
@@ -272,7 +293,7 @@
       overflow: hidden;
       visibility: hidden;
       width: @hexwidth;
-      border: 1px solid @ltgrey;
+      position: static;
     }
     
     .hex1 {
@@ -280,36 +301,56 @@
       height: 100%;
       overflow: hidden;
       width: 100%;
-      border: 1px solid @ltgrey;
     }
     
     
     .hex2 {
       .rotate(-60deg);
       height: 100%;
-      /*@include background-size((@hexwidth + (@hexwidth * .20)) (@hexwidth + (@hexwidth * .20)));
-      background-position: 50%;*/
       position: relative;
       visibility: visible;
       width: 100%;
-      border: 1px solid @ltgrey;
     }
     .desc {
       color: white;
-      font-family: 'Lato', sans-serif;
-      font-size: 1.5em;
+      background: fade(@green,70%);
       font-weight: 300;
       height: (@hexwidth * 2);
-      line-height: 1.5em;
       position: absolute;
       text-align: center;
       text-transform: uppercase; 
       visibility: visible;
       width: @hexwidth;
+      line-height: 1.2em;
+      opacity: 0;
+      .transition(all 0.5s ease);
+      &:hover{
+        opacity: 1;
+      }
       h2 {
         margin: (@hexwidth - (@hexwidth / 4)) 20px 0 20px;
+        color: @white;
+        font-size: 1em;
       }
-      p {font-size: .5em; text-transform: lowercase;}
+      p {font-size: 0.8em; text-transform: lowercase;}
+    }
+
+
+.hexagon.bkg{
+  height: (@hexwidth *2)+(@hexborder*2);
+  width: @hexwidth+(@hexborder*2);
+}
+
+.hex2.bkg{
+  background: @green;
+}
+
+.fg{
+  position: absolute;
+  top: @hexborder;
+  left: @hexborder;
+  z-index: 1000;
+}
     }
   }
   //Geothemal Page

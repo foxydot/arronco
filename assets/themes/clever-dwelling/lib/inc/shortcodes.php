@@ -1,4 +1,49 @@
 <?php
+add_shortcode('hex','msdlab_make_hex');
+function msdlab_make_hex($atts, $content = null){
+    extract( shortcode_atts( array(
+      'color' => 'green',
+      ), $atts ) );
+        $ret = '
+        <div class="hexa '.$color.'">
+            <div class="hexa_text">'.$content.'</div>
+            <div class="hexa_image"></div>
+            <div class="hexagon scale_0">
+              <div class="h_sq t_sq_1 color_0"></div>
+              <div class="h_sq t_sq_2 color_0"></div>
+              <div class="h_sq t_sq_3 color_0"></div>
+              <div class="h_sq t_sq_4 color_0"></div>
+              <div class="h_sq t_sq_5 color_0"></div>
+              <div class="h_sq t_sq_6 color_0"></div>
+            </div>
+            <div class="hexagon scale_1">
+              <div class="h_sq t_sq_1 color_1"></div>
+              <div class="h_sq t_sq_2 color_1"></div>
+              <div class="h_sq t_sq_3 color_1"></div>
+              <div class="h_sq t_sq_4 color_1"></div>
+              <div class="h_sq t_sq_5 color_1"></div>
+              <div class="h_sq t_sq_6 color_1"></div>
+            </div>
+            <div class="hexagon scale_2">
+              <div class="h_sq t_sq_1 color_2"></div>
+              <div class="h_sq t_sq_2 color_2"></div>
+              <div class="h_sq t_sq_3 color_2"></div>
+              <div class="h_sq t_sq_4 color_2"></div>
+              <div class="h_sq t_sq_5 color_2"></div>
+              <div class="h_sq t_sq_6 color_2"></div>
+            </div>
+            <div class="hexagon scale_3">
+              <div class="h_sq t_sq_1 color_3"></div>
+              <div class="h_sq t_sq_2 color_3"></div>
+              <div class="h_sq t_sq_3 color_3"></div>
+              <div class="h_sq t_sq_4 color_3"></div>
+              <div class="h_sq t_sq_5 color_3"></div>
+              <div class="h_sq t_sq_6 color_3"></div>
+            </div>
+      </div>';
+      return $ret;
+}
+
 add_shortcode('menu','msdlab_display_menu');
 function msdlab_display_menu($atts, $content = null){
     extract( shortcode_atts( array(
@@ -28,6 +73,72 @@ function msdlab_display_menu($atts, $content = null){
           return false;
       }
 }
+add_shortcode('team_output','msdlab_team');
+function msdlab_team(){
+            global $post,$msd_custom,$contact_info_metabox,$jobtitle_metabox;
+    
+            $msd_team_display = new MSDTeamDisplay;
+            $team = $msd_team_display->get_all_team_members();
+            $ret = '<div id="team-members">';
+            foreach($team AS $team_member){
+                $headshot = get_the_post_thumbnail($team_member->ID,'headshot-md');
+                $headshot_url = msdlab_get_thumbnail_url($team_member->ID,'headshot-md');
+                $terms = wp_get_post_terms($team_member->ID,'practice_area');
+                $jobtitle_metabox->the_meta($team_member->ID);
+                $practice_areas = '';
+                if(count($terms)>0){
+                    foreach($terms AS $term){
+                        $practice_areas[] = $term->slug;
+                    }
+                    
+                    $practice_areas = implode(' ', $practice_areas);
+                }
+                $mini_bio = msdlab_excerpt($team_member->ID);
+                $team_contact_info = '';
+                $contact_info_metabox->the_meta($team_member->ID);
+                $contact_info_metabox->the_field('_team_member_phone');
+                if($contact_info_metabox->get_the_value() != ''){ 
+                    $team_contact_info .= '<li class="phone"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-phone fa-stack-1x fa-inverse"></i></span>'.msd_str_fmt($contact_info_metabox->get_the_value(),'phone').'</li>';
+                } 
+                
+                $contact_info_metabox->the_field('_team_member_mobile');
+                if($contact_info_metabox->get_the_value() != ''){
+                    $team_contact_info .= '<li class="mobile"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-mobile-phone fa-stack-1x fa-inverse"></i></span> '.msd_str_fmt($contact_info_metabox->get_the_value(),'phone').'</li>';
+                }
+                
+                $contact_info_metabox->the_field('_team_member_linked_in');
+                if($contact_info_metabox->get_the_value() != ''){
+                    $team_contact_info .= '<li class="linkedin"><a href="'.$contact_info_metabox->get_the_value().'"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-linkedin-square fa-stack-1x fa-inverse"></i></span> Connect</a></li>';
+                }
+                
+                $contact_info_metabox->the_field('_team_member_bio_sheet');
+                if($contact_info_metabox->get_the_value() != ''){
+                    $team_contact_info .= '<li class="vcard"><a href="'.$contact_info_metabox->get_the_value().'"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-download-alt fa-stack-1x fa-inverse"></i></span> Download Bio</a></li>';
+                }
+                
+                $contact_info_metabox->the_field('_team_member_email');
+                if($contact_info_metabox->get_the_value() != ''){
+                    $team_contact_info .= '<li class="email"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span> '.msd_str_fmt($contact_info_metabox->get_the_value(),'email').'</li>';
+                }
+                $teamstr = '<div class="center">
+    <div class="hexagon">
+      <div class="hex1">
+        <div class="hex2" style="background: url('.$headshot_url.') center no-repeat">
+          <div class="desc">
+            <h2>'.$team_member->post_title.'</h2>
+            <p class="jobtitle">'.$jobtitle_metabox->get_the_value('jobtitle').'</p>
+            <p class="email">'.msd_str_fmt($contact_info_metabox->get_the_value(),'email').'</p>
+            <p class="phone">'.msd_str_fmt($contact_info_metabox->get_the_value(),'phone').'</p>
+          </div>  
+        </div><!--/hex2--> 
+      </div><!--/hex1-->
+    </div><!--/hexagon--> 
+  </div><!--/center-->';
+                $ret .= $teamstr;        
+            }
+            $ret .= '</div>';
+            return $ret;
+        }
 add_shortcode('button','msdlab_button_function');
 function msdlab_button_function($atts, $content = null){	
 	extract( shortcode_atts( array(

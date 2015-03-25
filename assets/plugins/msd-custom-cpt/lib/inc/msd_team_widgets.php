@@ -77,14 +77,6 @@ class MSD_Widget_Team_Viewpoints extends WP_Widget {
                     }
                 }
                 
-                
-                
-                
-                
-                
-                
-                
-                
                 print '</div>
                 <div class="date">'.get_the_time( 'l, F j, Y', $viewpoint ).'</div>
                 <a class="read-more" href="'.get_post_permalink($viewpoint->ID).'">Read More ></a>

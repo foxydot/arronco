@@ -1,3 +1,4 @@
+@hexwidth: 160px;
 .about{
   .site-inner, .sectioned-page-wrapper{
     .entry-title,.entry-subtitle,
@@ -66,6 +67,7 @@
         color: @white;
       }
     }
+    h2,h4,h5,h6 { color: @white; }
   }
   //Home Page
   .section.hero{
@@ -132,6 +134,35 @@
     }
     .location-phone{
       .customheader;
+    }
+  }
+  .section.section-twins{
+    background-position: 50% 100%;
+    text-align: center;
+    color: @white;
+    text-shadow: 0 0 4px @dkgrey;
+    h2{
+      margin:0;
+    }
+    .wrap{
+      position: relative;
+      min-height: 500px;
+      .hex-holder{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        width: 100px;
+        display: block;
+        i{
+          font-size: 1.2em;
+          width: 2em;
+          height: 2em;
+          line-height: 1.8;
+          border: 1px solid fade(@white,80%);
+          border-radius: 50%;
+          margin-bottom: 0.6em;
+        }
+      }
     }
   }
   .section.section-testimonials{
@@ -225,6 +256,60 @@
           }
         }
       }
+    }
+  }
+  .section.section-employees{
+    .center {
+      float: left;
+      margin: 20px 10px;
+      width: @hexwidth;
+    }
+    
+    .hexagon {
+      .rotate(120deg);
+      cursor: pointer;
+      height: (@hexwidth *2);
+      overflow: hidden;
+      visibility: hidden;
+      width: @hexwidth;
+      border: 1px solid @ltgrey;
+    }
+    
+    .hex1 {
+      .rotate(-60deg);
+      height: 100%;
+      overflow: hidden;
+      width: 100%;
+      border: 1px solid @ltgrey;
+    }
+    
+    
+    .hex2 {
+      .rotate(-60deg);
+      height: 100%;
+      /*@include background-size((@hexwidth + (@hexwidth * .20)) (@hexwidth + (@hexwidth * .20)));
+      background-position: 50%;*/
+      position: relative;
+      visibility: visible;
+      width: 100%;
+      border: 1px solid @ltgrey;
+    }
+    .desc {
+      color: white;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.5em;
+      font-weight: 300;
+      height: (@hexwidth * 2);
+      line-height: 1.5em;
+      position: absolute;
+      text-align: center;
+      text-transform: uppercase; 
+      visibility: visible;
+      width: @hexwidth;
+      h2 {
+        margin: (@hexwidth - (@hexwidth / 4)) 20px 0 20px;
+      }
+      p {font-size: .5em; text-transform: lowercase;}
     }
   }
   //Geothemal Page

@@ -97,30 +97,6 @@ function msdlab_team(){
                 $mini_bio = msdlab_excerpt($team_member->ID);
                 $team_contact_info = '';
                 $contact_info_metabox->the_meta($team_member->ID);
-                $contact_info_metabox->the_field('_team_member_phone');
-                if($contact_info_metabox->get_the_value() != ''){ 
-                    $team_contact_info .= '<li class="phone"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-phone fa-stack-1x fa-inverse"></i></span>'.msd_str_fmt($contact_info_metabox->get_the_value(),'phone').'</li>';
-                } 
-                
-                $contact_info_metabox->the_field('_team_member_mobile');
-                if($contact_info_metabox->get_the_value() != ''){
-                    $team_contact_info .= '<li class="mobile"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-mobile-phone fa-stack-1x fa-inverse"></i></span> '.msd_str_fmt($contact_info_metabox->get_the_value(),'phone').'</li>';
-                }
-                
-                $contact_info_metabox->the_field('_team_member_linked_in');
-                if($contact_info_metabox->get_the_value() != ''){
-                    $team_contact_info .= '<li class="linkedin"><a href="'.$contact_info_metabox->get_the_value().'"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-linkedin-square fa-stack-1x fa-inverse"></i></span> Connect</a></li>';
-                }
-                
-                $contact_info_metabox->the_field('_team_member_bio_sheet');
-                if($contact_info_metabox->get_the_value() != ''){
-                    $team_contact_info .= '<li class="vcard"><a href="'.$contact_info_metabox->get_the_value().'"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-download-alt fa-stack-1x fa-inverse"></i></span> Download Bio</a></li>';
-                }
-                
-                $contact_info_metabox->the_field('_team_member_email');
-                if($contact_info_metabox->get_the_value() != ''){
-                    $team_contact_info .= '<li class="email"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span> '.msd_str_fmt($contact_info_metabox->get_the_value(),'email').'</li>';
-                }
                 $teamstr = '<div class="center">
     <div class="hexagon bkg">
       <div class="hex1 bkg">
@@ -134,8 +110,8 @@ function msdlab_team(){
           <div class="desc">
             <h2>'.$team_member->post_title.'</h2>
             <p class="jobtitle">'.$jobtitle_metabox->get_the_value('jobtitle').'</p>
-            <p class="email">'.msd_str_fmt($contact_info_metabox->get_the_value(),'email').'</p>
-            <p class="phone">'.msd_str_fmt($contact_info_metabox->get_the_value(),'phone').'</p>
+            <p class="email">'.msd_str_fmt($contact_info_metabox->get_the_value('_team_email'),'email').'</p>
+            <p class="phone">'.msd_str_fmt($contact_info_metabox->get_the_value('_team_phone'),'phone').'</p>
           </div>  
         </div><!--/hex2--> 
       </div><!--/hex1-->

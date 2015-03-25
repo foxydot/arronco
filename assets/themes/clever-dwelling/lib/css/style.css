@@ -7882,13 +7882,18 @@ Site Footer
   opacity: 1;
 }
 .sectioned-page-wrapper .section.section-employees #team-members .desc h2 {
-  margin: 120px 20px 0 20px;
+  margin: 110px 20px 0 20px;
   color: #ffffff;
   font-size: 1em;
 }
 .sectioned-page-wrapper .section.section-employees #team-members .desc p {
   font-size: 0.8em;
   text-transform: lowercase;
+  margin: 0;
+}
+.sectioned-page-wrapper .section.section-employees #team-members .desc a,
+.sectioned-page-wrapper .section.section-employees #team-members .desc a:visited {
+  color: #ffffff;
 }
 .sectioned-page-wrapper .section.section-employees #team-members .hexagon.bkg {
   height: 328px;

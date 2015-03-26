@@ -5628,7 +5628,7 @@ html {
 body {
   background-color: #ffffff;
   color: #1a1a1a;
-  font-family: "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Sceptica", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -6063,7 +6063,7 @@ img.alignright,
   padding: 4rem;
 }
 .author-box-title {
-  font-family: "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Sceptica", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -6617,7 +6617,7 @@ Site Navigation
   position: relative;
 }
 .nav-secondary .wrap li.menu-item > a {
-  font-family: "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Sceptica", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 14px;
   font-size: 1.4rem;
@@ -7106,7 +7106,7 @@ Sidebars
   border-radius: 0px;
 }
 .sidebar .widget .widget-title {
-  font-family: "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Sceptica", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 24px;
   font-size: 2.4rem;
@@ -7989,6 +7989,11 @@ Site Footer
 .sectioned-page-wrapper .section-conventional-system {
   text-align: center;
 }
+.sectioned-page-wrapper .section.section-artwork {
+  min-height: 300px;
+  background-position: right center;
+  background-size: 100%;
+}
 .page-title-area {
   background: #1a1a1a;
 }
@@ -8058,6 +8063,33 @@ Site Footer
   font-size: 15px;
   font-size: 1.5rem;
   color: #5e5f61;
+}
+.section-contact.contact .entry-subtitle {
+  color: #9ca728;
+}
+.section-contact.contact .entry-content {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.section-contact.contact .entry-content:before,
+.section-contact.contact .entry-content:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.section-contact.contact .entry-content:after {
+  clear: both;
+}
+.section-contact.contact .entry-content:before,
+.section-contact.contact .entry-content:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.section-contact.contact .entry-content:after {
+  clear: both;
 }
 .footer-widgets .savings {
   background-color: #5e5f61;

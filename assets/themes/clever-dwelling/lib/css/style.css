@@ -179,6 +179,42 @@ input[type="search"] {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+/* Float Clearing
+--------------------------------------------- 
+
+.archive-pagination:before,
+.clearfix:before,
+.entry:before,
+.entry-pagination:before,
+.footer-widgets:before,
+.nav-primary:before,
+.nav-secondary:before,
+.site-container:before,
+.site-footer:before,
+.site-header:before,
+.site-inner:before,
+.wrap:before {
+  content: " ";
+  display: table;
+}
+
+.archive-pagination:after,
+.clearfix:after,
+.entry:after,
+.entry-pagination:after,
+.footer-widgets:after,
+.nav-primary:after,
+.nav-secondary:after,
+.site-container:after,
+.site-footer:after,
+.site-header:after,
+.site-inner:after,
+.wrap:after {
+  clear: both;
+  content: " ";
+  display: table;
+}
+*/
 /*!
  * Bootstrap v3.0.0
  *
@@ -7642,8 +7678,9 @@ Site Footer
   color: #ffffff;
   text-shadow: 0 0 12px rgba(26, 26, 26, 0.8);
 }
-.sectioned-page-wrapper .section.hero .section-body .section-subtitle {
+.sectioned-page-wrapper .section.hero .section-body h1 {
   color: #ffffff;
+  font-weight: 400;
   text-shadow: 0 0 12px rgba(26, 26, 26, 0.8);
 }
 .sectioned-page-wrapper .section.hero .section-body .button-wrapper .button {

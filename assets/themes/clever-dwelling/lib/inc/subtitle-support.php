@@ -50,7 +50,7 @@ function msdlab_do_post_subtitle() {
 	if ( strlen( $subtitle ) == 0 )
 		return;
 
-	$subtitle = sprintf( '<h2 class="entry-subtitle">%s</h2>', apply_filters( 'genesis_post_title_text', $subtitle ) );
+	$subtitle = sprintf( '<h1 class="entry-subtitle">%s</h1>', apply_filters( 'genesis_post_title_text', $subtitle ) );
 	echo apply_filters( 'genesis_post_title_output', $subtitle ) . "\n";
 
 }

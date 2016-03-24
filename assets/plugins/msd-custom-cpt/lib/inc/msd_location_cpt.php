@@ -146,21 +146,21 @@ if (!class_exists('MSDLocationCPT')) {
 
 		function custom_query( $query ) {
 			if(!is_admin()){
+			    
+                $is_location = ($query->query['post_type'] == $this->cpt)?TRUE:FALSE;
 				if($query->is_main_query() && $query->is_search){
-					$searchterm = $query->query_vars['s'];
-					// we have to remove the "s" parameter from the query, because it will prevent the posts from being found
-					$query->query_vars['s'] = "";
-					
-					if ($searchterm != "") {
-						$query->set('meta_value',$searchterm);
-						$query->set('meta_compare','LIKE');
-					};
-					$query->set( 'post_type', array('post','page',$this->cpt) );
-					ts_data($query);
-				}
-				elseif( $query->is_main_query() && $query->is_archive ) {
-					$query->set( 'post_type', array('post','page',$this->cpt) );
-				}
+                    $post_types = $query->query_vars['post_type'];
+                    if(count($post_types)==0){
+                        $post_types[] = 'post';
+                        $post_types[] = 'page';
+                    }
+                    $post_types[] = $this->cpt;
+                    $query->set( 'post_type', $post_types );
+                }
+                elseif( $query->is_main_query() && $query->is_archive && $is_location) {
+                    $query->set( 'post_type', $this->cpt );
+                    $query->set( 'meta_query', array() );
+                }
 			}
 		}		
         
@@ -188,13 +188,20 @@ if (!class_exists('MSDLocationCPT')) {
               foreach($posts AS $post){
                   $thumb = get_the_post_thumbnail( $post->ID, 'location_thumb' );
                   $address = get_post_meta($post->ID, '_location_address', true);
-                  $ret .= '<div class="col-md-'.$cols.' col-xs-12">
+                  $ret .= '<div class="location-block col-md-'.$cols.' col-xs-12" href="'.get_post_permalink($post->ID).'">
                     '.$thumb.'
                     <div class="location-title">'.$post->post_title.'</div>
                     <div class="location-phone">'.$address[0]['phone'].'</div>
                   </div>';
               }
-              return '<div class="row">'.$ret.'</div>';
+              $script = '<script>
+                jQuery(document).ready(function($) {
+                    $(".location-block").click(function(){
+                        window.location.assign($(this).attr("href"));
+                    }).css("cursor","pointer");
+                });
+              </script>';
+              return '<div class="row">'.$ret.'</div>'.$script;
         }	
 
 

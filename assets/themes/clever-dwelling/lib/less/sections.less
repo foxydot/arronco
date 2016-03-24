@@ -120,6 +120,7 @@
         }
         a, a:visited, a:hover{
           color: @white;
+          padding: 2rem 0;
         }
       }
     }
@@ -137,23 +138,25 @@
       .customheader;
     }
   }
-  .section.section-twins{
-    background-position: 50% 100%;
-    text-align: center;
+  .section.section-slider{
     color: @white;
     text-shadow: 0 0 4px @dkgrey;
+    padding: 0;
     h2{
       margin:0;
     }
     .wrap{
       position: relative;
+      max-width: 100%;
       min-height: 500px;
+      text-align: center;
       .hex-holder{
         position: absolute;
         top: 40%;
         left: 50%;
         width: 100px;
         display: block;
+        white-space: normal;
         i{
           font-size: 1.2em;
           width: 2em;

@@ -251,6 +251,18 @@ function msdlab_do_section_title(){
         print '</div>';
         print '</div>';
         print '</div>';
+    } elseif(is_cpt('location') && is_single()) {            
+        print '<div class="banner clearfix" style="background-image:url('.msdlab_get_thumbnail_url($blog_home->ID,'full').')">';
+        print '<div class="texturize">';
+        print '<div class="gradient">';
+        print '<div class="wrap">';
+        print '<h2 class="section-title">';
+        print get_the_title();
+        print '</h2>';
+        print '</div>';
+        print '</div>';
+        print '</div>';
+        print '</div>';
     } elseif(is_home() || is_single()) {
         $blog_home = get_post(get_option( 'page_for_posts' ));
         $title = apply_filters( 'genesis_post_title_text', $blog_home->post_title );//* Wrap in H1 on singular pages
@@ -266,8 +278,6 @@ function msdlab_do_section_title(){
         print '</div>';
         print '</div>';
         print '</div>';
-    } elseif(is_single()) {
-        genesis_do_post_title();
     } else {
         genesis_do_post_title();
     }

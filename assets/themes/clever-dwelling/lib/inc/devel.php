@@ -28,8 +28,8 @@ function dequeue_jquery_migrate( &$scripts){
     }
 }
 
-add_action('genesis_footer','msdlab_trace_actions');
+//add_action('genesis_footer','msdlab_trace_actions');
 function msdlab_trace_actions(){
     global $wp_filter;
-    ts_var( $wp_filter['genesis_after_header'] );
+    ts_var( $wp_filter['genesis_entry_header'] );
 }

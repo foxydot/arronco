@@ -188,11 +188,11 @@ if (!class_exists('MSDLocationCPT')) {
               foreach($posts AS $post){
                   $thumb = get_the_post_thumbnail( $post->ID, 'location_thumb' );
                   $address = get_post_meta($post->ID, '_location_address', true);
-                  $ret .= '<div class="location-block col-md-'.$cols.' col-xs-12" href="'.get_post_permalink($post->ID).'">
+                  $ret .= '<a class="location-block col-md-'.$cols.' col-xs-12" href="'.get_post_permalink($post->ID).'">
                     '.$thumb.'
                     <div class="location-title">'.$post->post_title.'</div>
                     <div class="location-phone">'.$address[0]['phone'].'</div>
-                  </div>';
+                  </a>';
               }
               $script = '<script>
                 jQuery(document).ready(function($) {

@@ -65,6 +65,7 @@
   .page-title-area{
     background: @dkgrey;
     .banner{
+    background-size: auto 90vw;
       .texturize{
         .gradient{
           min-height: 28vw;
@@ -75,6 +76,46 @@
       padding: 1.2em 0;
       font-size: 5.6vw;
     }
+  }
+  .sectioned-page-wrapper{
+    .section.hero{
+      min-height: 65vw;
+      height: 65vw;
+      background-size: auto 90vw;
+      .section-title{
+        margin-top: 30vw;
+        font-size: 3.6vw;
+      }
+      .section-body{
+        h1{
+          font-size: 3.6vw;
+        }
+      }
+    }
+    .section-service-menu .menu .menu-item{
+      border-color: fade(@white,80%) !important;
+      border-style: solid !important;
+      border-width: 1px 0 0 0 !important;
+      width: 100%;
+    }
+    .section.section-values .section-body ul{
+      -moz-column-count: 1;
+      -moz-column-gap: 0px;
+      -webkit-column-count: 1;
+      -webkit-column-gap: 0px;
+      column-count: 1;
+      column-gap: 0px;
+      li{
+        min-height: auto;
+      }
+    }
+    .section.section-explore{
+      .section-title{text-align: center;}
+      .section-body .wrap .button-wrapper{position: static;margin: 12px auto;display: block;}
+    }
+  }
+  .carousel-inner{
+    padding: 0 10px;
   }
 }
 

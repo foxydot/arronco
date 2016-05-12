@@ -7307,6 +7307,7 @@ Footer Widgets
   clear: both;
 }
 .footer-widgets .connected-additional-locations address {
+  margin-bottom: 2em;
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -7325,7 +7326,7 @@ Footer Widgets
   display: block;
 }
 .footer-widgets .connected-additional-locations address .msdsocial_phone {
-  margin-top: 2em;
+  margin-top: 1em;
 }
 .footer-widgets .connected-social .social-media {
   float: left;
@@ -8228,6 +8229,18 @@ Site Footer
     float: none;
     width: 100%;
   }
+  .page-title-area {
+    background: #1A1A1A;
+  }
+  .page-title-area .banner .texturize .gradient {
+    min-height: 28vw;
+  }
+  .page-title-area .section-title,
+  .page-title-area .page-title,
+  .page-title-area .entry-title {
+    padding: 1.2em 0;
+    font-size: 5.6vw;
+  }
 }
 @media only screen and (max-width: 479px) {
   /* Enter Your Custom Styles Here */
@@ -8246,6 +8259,12 @@ Site Footer
   .tablepress td,
   .tablepress th {
     display: inline-block;
+  }
+  #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item {
+    width: 100%;
+  }
+  #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item.widget_random_testimonial {
+    display: none;
   }
 }
 @media only screen and (max-width: 319px) {

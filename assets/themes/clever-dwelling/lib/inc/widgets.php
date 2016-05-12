@@ -1,4 +1,27 @@
 <?php
+if(class_exists('MSDSocial')){
+    class CustomSocial extends MSDSocial {
+        function get_additional_locations(){
+            $additional_locations = get_option(msdsocial_adtl_locations);
+            $ret = '';
+            foreach($additional_locations AS $loc){
+                if(($loc[location_name]!='') || ($loc[street]!='') || ($loc[city]!='') || ($loc[state]!='') || ($loc[zip]!='') || ($loc[phone]!='')) {
+                    $ret .= '<address itemscope itemtype="http://schema.org/LocalBusiness">';
+                        $ret .= ($loc[location_name]!='')?'<span itemprop="name" class="msdsocial_location_name">'.$loc[location_name].'</span> ':'';
+                        $ret .= ($loc[street]!='')?'<span itemprop="streetAddress" class="msdsocial_street">'.$loc[street].'</span> ':'';
+                        $ret .= ($loc[street2]!='')?'<span itemprop="streetAddress" class="msdsocial_street_2">'.$loc[street2].'</span> ':'';
+                        $ret .= ($loc[city]!='')?'<span itemprop="addressLocality" class="msdsocial_city">'.$loc[city].'</span>, ':'';
+                        $ret .= ($loc[state]!='')?'<span itemprop="addressRegion" class="msdsocial_state">'.$loc[state].'</span> ':'';
+                        $ret .= ($loc[zip]!='')?'<span itemprop="postalCode" class="msdsocial_zip">'.$loc[zip].'</span> ':'';
+                        $ret .= $this->get_location_digits($loc,FALSE,'');
+                    $ret .= '</address>';
+                }
+            }
+            return $ret;
+        }
+    }
+}
+$msd_social = new CustomSocial();
 /**
  * Connected Class
  */

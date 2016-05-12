@@ -62,6 +62,20 @@
       
     }
   }
+  .page-title-area{
+    background: @dkgrey;
+    .banner{
+      .texturize{
+        .gradient{
+          min-height: 28vw;
+        }
+      }
+    }
+    .section-title,.page-title,.entry-title{
+      padding: 1.2em 0;
+      font-size: 5.6vw;
+    }
+  }
 }
 
 
@@ -88,6 +102,12 @@
     }
   }
   .tablepress td, .tablepress th {display: inline-block;}
+  #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item{
+    width: 100%;
+    &.widget_random_testimonial{
+      display: none;
+    }
+  }
 } 
 
 @media only screen and (max-width : 319px) {  

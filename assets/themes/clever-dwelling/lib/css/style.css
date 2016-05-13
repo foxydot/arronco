@@ -8273,6 +8273,70 @@ Site Footer
   .sectioned-page-wrapper .section.section-values .section-body ul li {
     min-height: auto;
   }
+  .sectioned-page-wrapper .section.section-slider h2 {
+    font-size: 3vw;
+  }
+  .sectioned-page-wrapper .section.section-slider h6 {
+    font-size: 1.6vw;
+  }
+  .sectioned-page-wrapper .section.section-slider .hex-holder {
+    width: 100vw;
+  }
+  .sectioned-page-wrapper .section.section-slider .hex-holder .scale_2 {
+    left: 0.2vw;
+    top: 0.1vw;
+  }
+  .sectioned-page-wrapper .section.section-slider .hex-holder .scale_3 {
+    left: 0.4vw;
+    top: 0.2vw;
+  }
+  .sectioned-page-wrapper .section.section-slider .hex-holder .hexa h2 {
+    margin-top: -1.6vw;
+  }
+  .sectioned-page-wrapper .section.section-slider .hex-holder .hexa_text {
+    width: 10.2vw;
+    height: 6vw;
+  }
+  .sectioned-page-wrapper .section.section-slider .hex-holder .hexa_image {
+    width: 11.4vw;
+    left: -0.5vw;
+    height: 13vw;
+    top: -4.5vw;
+    background-position: 0.3vw 0.5vw;
+  }
+  .sectioned-page-wrapper .section.section-slider .hex-holder .hexa.green {
+    box-shadow: 0px 0px 0.3vw #1A1A1A;
+  }
+  .sectioned-page-wrapper .section.section-slider .hex-holder .h_sq {
+    position: absolute;
+    border-radius: 1vw;
+    width: 11.4vw;
+    height: 11.4vw;
+  }
+  .sectioned-page-wrapper .section.section-slider .hex-holder .t_sq_1 {
+    left: 1vw;
+    top: 1vw;
+  }
+  .sectioned-page-wrapper .section.section-slider .hex-holder .t_sq_2 {
+    left: 4.8vw;
+    top: 1vw;
+  }
+  .sectioned-page-wrapper .section.section-slider .hex-holder .t_sq_3 {
+    left: 6.7vw;
+    top: -2.3vw;
+  }
+  .sectioned-page-wrapper .section.section-slider .hex-holder .t_sq_4 {
+    left: 1vw;
+    top: -5.7vw;
+  }
+  .sectioned-page-wrapper .section.section-slider .hex-holder .t_sq_5 {
+    left: -0.9vw;
+    top: -2.3vw;
+  }
+  .sectioned-page-wrapper .section.section-slider .hex-holder .t_sq_6 {
+    left: 4.8vw;
+    top: -5.7vw;
+  }
   .sectioned-page-wrapper .section.section-explore .section-title {
     text-align: center;
   }

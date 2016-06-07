@@ -247,7 +247,7 @@ class MSD_Widget_Random_Testimonial extends WP_Widget {
         echo $before_widget; 
         print '<h4 class="widget-title widgettitle">'.$post->post_title.'</h4>';
         print '<div class="wrap">';
-        print $cpt->testimonial_shortcode_handler(); 
+        print $cpt->testimonial_shortcode_handler(array()); 
         print '
         <div class="clearfix"></div>
         </div>';
